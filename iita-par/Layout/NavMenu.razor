@@ -1,0 +1,82 @@
+﻿@* <div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">iita-par</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+ *@
+<div class="sidenav">
+    <div class="side-container">
+        <div class="header">
+            Appraisee Section
+        </div>
+        <div class="content">
+            <a href="workplan2.html" class="item">My Workplans</a>
+            <a href="#" class="item">My Appraisals</a>
+            <a href="#" class="item">View My PDFs</a>
+            <a href="#" class="item">Achievements</a>
+        </div>
+    </div>
+
+    <div class="side-container">
+        <div class="header">
+            Appraiser Section
+        </div>
+        <div class="content">
+            <a href="#" class="item">Supervise</a>
+            <a href="#" class="item">Manage NRS PG 1-6 Appraisal(s)</a>
+            <a href="#" class="item">Manage NRS PG 7-15 Appraisal(s)</a>
+            <a href="#" class="item">Manage R4D Appraisal(s)</a>
+        </div>
+    </div>
+
+    <div class="side-container">
+        <div class="header">
+            Quick Access
+        </div>
+        <div class="content">
+            <a href="#" class="item">My Learning</a>
+            <a href="#" class="item">DOIs</a>
+        </div>
+    </div>
+
+    <div class="side-container" style="margin-bottom: 0px !important;">
+        <div class="header">
+            Support
+        </div>
+        <div class="content">
+            <a href="#" class="item"><i class="fa-sharp fa-regular fa-envelope"></i> Contact IT Support</a>
+            <a href="#" class="item"><i class="fa-solid fa-route"></i> Take a Tour</a>
+            <a href="#" class="item"><i class="fa-regular fa-circle-question"></i> Frequently Asked Questions</a>
+            <a href="#" class="item">
+                <i class="fa-regular fa-comment-dots"></i> Help us make PAR better
+                <!-- <div class="feedback-image-div">
+                    <img src="assets/par-mockup-1.png" alt="PAR Mockup" />
+                    <p>Share your feedback</p>
+                  </div> -->
+            </a>
+            <a href="#" class="item"><i class="fa-solid fa-arrow-right-to-bracket"></i> Logout</a>
+        </div>
+    </div>
+    @* <div id="mySidenav" class="sidenav">
+
+
+        <!-- <div class="work-plan">
+            <h2>Ademola Patrick</h2>
+            <p>NRS Professional</p>
+        </div> -->
+    </div> *@
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

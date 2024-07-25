@@ -1,0 +1,37 @@
+﻿@inherits LayoutComponentBase
+<div class="page">
+    <div class="nav-bar">
+        <div class="topnav">
+            <img src="assets/IITA-logo-1.png" alt="IITA logo" style="float: left;" />
+            <img src="assets/PAR-logo.svg" alt="PAR Logo" class="par-logo" style="float: left; margin-right: 20px;" />
+            <a class="active" href="dashboard.html">Dashboard</a>
+            <a href="#news">Delegate</a>
+            <a href="#contact">Bug</a>
+            <a href="#about">Help</a>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="mySidenav" class="sidenav">
+            <NavMenu />
+        </div>
+        <div id="main" class="main">
+            @Body
+        </div>
+    </div>
+    <footer style="margin-top:20px" class="footer" data-title="Need help with something?" data-intro="Reach out to us. We're here to assist you.">
+        <div class="flex-center footer-logos">
+            <img src="assets/IITA-logo-1.png" alt="IITA logo" />
+            <img src="assets/PAR-logo.svg" alt="PAR Logo" />
+        </div>
+        <div class="help-div">
+            <h2>Need help with something?</h2>
+            <p>
+                Check out our <strong><a href="">FAQ Page</a></strong> for answers to common questions.
+            </p>
+            <p>
+                Or contact <strong><a href="mailto:IITA-SDITSA@cgiar.org">IITA-SDITSA@cgiar.org</a></strong> for help.
+            </p>
+        </div>
+    </footer>
+</div>
