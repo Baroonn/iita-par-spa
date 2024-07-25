@@ -1,0 +1,87 @@
+﻿.record-header {
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+    .record-header h1 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .record-header p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+.record-details {
+    margin-top: 20px;
+}
+
+    .record-details p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .record-details label {
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+textarea {
+    resize: none;
+}
+
+#workplan-year {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.objective-section {
+    margin-top: 20px;
+}
+
+    .objective-section label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+#objective {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+
+.cancel-button, .update-button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #fff;
+    color: #d9534f;
+    border: 1px solid #d9534f;
+    margin-right: 10px;
+}
+
+.update-button {
+    background-color: #f0ad4e;
+    color: #fff;
+}

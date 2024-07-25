@@ -1,0 +1,44 @@
+﻿@page "/edit-achievement"
+
+<div class="edit-achievement-header par-card">
+    <h1>Achievements - Edit Achievement</h1>
+    <p>NRS Workplan</p>
+    <br>
+    <table style="font-size: 14px;">
+        <tr>
+            <td style="padding-right: 10px;padding-bottom: 7px;"><strong>Username:</strong></td>
+            <td>ADEMOLA Patrick</td>
+        </tr>
+        <tr>
+            <td style="padding-right: 10px;padding-bottom: 7px;"><strong>Workplan Objective:</strong></td>
+            <td>Contribute my quota to the achievement of the goals of my department.</td>
+        </tr>
+        <tr>
+            <td style="padding-right: 10px;"><strong>Workplan Year:</strong></td>
+            <td>
+                <select>
+                    <option value="2024">2024</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="edit-achievement-content par-card">
+
+
+    <div class="form-group">
+        <label for="achievement">Achievement:</label>
+        <textarea id="achievement"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea id="comment"></textarea>
+    </div>
+    <div class="form-actions">
+        <button class="cancel-button">Cancel</button>
+        <button class="update-button">Update</button>
+    </div>
+</div>
+@code {
+
+}

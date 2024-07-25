@@ -1,0 +1,79 @@
+﻿.edit-achievement-header {
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+    .edit-achievement-header .form-group {
+        display: flex;
+    }
+
+    .edit-achievement-header h1 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .edit-achievement-header p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+.edit-achievement-content {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-group p {
+        font-size: 14px;
+        color: #555;
+    }
+
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+.form-actions {
+    text-align: right;
+}
+
+.cancel-button, .update-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+}
+
+    .cancel-button:hover {
+        background-color: #c82333;
+    }
+
+.update-button {
+    background-color: #007bff;
+    margin-left: 10px;
+}
+
+    .update-button:hover {
+        background-color: #0056b3;
+    }

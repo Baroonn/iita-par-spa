@@ -1,0 +1,46 @@
+﻿@page "/my-appraisals"
+
+<div class="appraisal-header par-card">
+    <h1>My Appraisals</h1>
+    <p>NRS Appraisals</p>
+    <br>
+    <p><strong>Username:</strong> ADEMOLA Patrick</p>
+</div>
+<div class="appraisal-content par-card">
+    <h2 style="display: inline-block;width:80%;">Uncompleted Appraisals - 2024</h2><div style="display: inline-block;width:20%;" class="filter-year">
+        <label for="year">Pick a year:</label>
+        <select id="year" name="year">
+            <option value="2024">2024</option>
+            <!-- Add other years as needed -->
+        </select>
+    </div>
+    <table class="appraisal-table">
+        <thead>
+            <tr>
+                <th>Appraiser</th>
+                <th>Appraisee</th>
+                <th>Country</th>
+                <th>Last updated</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>David, Smith</td>
+                <td>
+                    R
+                    <a href="#">WP</a>
+                    <a href="#">PDF</a>
+                    ADEMOLA, Patrick [E3ADEPAT]
+                </td>
+                <td>Nigeria</td>
+                <td>KOraegbunam, 15/01/2024</td>
+                <td>PENDING</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+@code {
+
+}

@@ -1,0 +1,45 @@
+﻿@page "/add-kpis"
+<script src="https://cdn.tiny.cloud/1/i0iw19ig5bh7prz3lwaknijtbekti1xmso6s1mp8rs72bgfq/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        plugins: 'lists link image paste help wordcount',
+        toolbar: 'undo redo | formatselect | bold italic backcolor | \
+                  alignleft aligncenter alignright alignjustify | \
+                  bullist numlist outdent indent | removeformat | help'
+    });
+</script>
+<div class="record-header par-card">
+    <h1>Workplan Details - Add KPIs</h1>
+    <p>NRS Workplan</p>
+    <br>
+    <p><strong>Username:</strong> ADEMOLA Patrick</p>
+</div>
+<form class="add-kpis-form par-card">
+    <label for="kpi">Key Performance Indicators (KPI) (250 words max):</label>
+    <textarea id="kpi" name="kpi"></textarea>
+    <br>
+    <label for="activity">Activity for this KPI (250 words max):</label>
+    <textarea id="activity" name="activity"></textarea>
+    <br>
+    <label for="milestone1">Milestone 1st Qtr (250 words max):</label>
+    <textarea id="milestone1" name="milestone1"></textarea>
+    <br>
+    <label for="milestone2">Milestone 2nd Qtr (250 words max):</label>
+    <textarea id="milestone2" name="milestone2"></textarea>
+    <br>
+    <label for="milestone3">Milestone 3rd Qtr (250 words max):</label>
+    <textarea id="milestone3" name="milestone3"></textarea>
+    <br>
+    <label for="milestone4">Milestone 4th Qtr (250 words max):</label>
+    <textarea id="milestone4" name="milestone4"></textarea>
+    <br>
+    <div class="form-actions">
+        <button type="button" class="cancel-button">Cancel</button>
+        <button type="submit" class="update-button">Update</button>
+    </div>
+</form>
+
+@code {
+
+}

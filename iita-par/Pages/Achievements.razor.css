@@ -1,0 +1,94 @@
+﻿.achievements-header {
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+    .achievements-header h1 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .achievements-header p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+.achievements-content {
+    margin-top: 20px;
+}
+
+    .achievements-content h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+.objective {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+    .objective button {
+        display: block;
+    }
+
+    .objective h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+.toggle-details {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #007bff;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.workplan-details {
+    display: none;
+    margin-bottom: 10px;
+}
+
+    .workplan-details p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+.achievement-details {
+    margin-top: 10px;
+}
+
+    .achievement-details p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+.edit-button, .delete-button, .add-achievement-button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .edit-button:hover, .delete-button:hover, .add-achievement-button:hover {
+        background-color: #0056b3;
+    }
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+    .delete-button:hover {
+        background-color: #c82333;
+    }

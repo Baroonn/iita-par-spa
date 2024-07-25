@@ -1,0 +1,40 @@
+﻿@page "/import-workplan"
+
+<div class="par-card">
+    <div class="record-header">
+        <h1>Workplan Details - Import Workplan (XLS file)</h1>
+        <p>NRS Workplan</p>
+    </div>
+    <div class="record-details">
+        <p><strong>Username:</strong> ADEMOLA Patrick</p>
+        <label for="workplan-year"><strong>Workplan Year:</strong></label>
+        <select id="workplan-year">
+            <option value="2024">2024</option>
+            <!-- Add other years as needed -->
+        </select>
+    </div>
+</div>
+
+<div class="import-section par-card">
+    <table style="margin: auto;font-size: 14px;">
+        <tr style="width: 150px;">
+            <td><strong>Preferred Format:</strong></td>
+            <td><strong>Objective | Performance</strong></td>
+        </tr>
+        <tr>
+            <td>XLS File: </td>
+            <td><input type="file" id="file-upload" accept=".xls,.xlsx" name="file-upload"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: right;"><button class="upload-button">Upload</button></td>
+        </tr>
+    </table>
+    <!-- <p><strong>Preferred Format:</strong> Objective | Performance</p>
+    <label for="file-upload"><strong>XLS File:</strong></label>
+    <input type="file" id="file-upload" name="file-upload"> -->
+
+</div>
+@code {
+
+}

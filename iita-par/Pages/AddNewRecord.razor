@@ -1,0 +1,29 @@
+﻿@page "/add-new-record"
+
+<div class="par-card">
+    <div class="record-header">
+        <h1>Workplan Details - Add New Record</h1>
+        <p>NRS Workplan</p>
+    </div>
+    <div class="record-details">
+        <p><strong>Username:</strong> ADEMOLA Patrick</p>
+        <label for="workplan-year"><strong>Workplan Year:</strong></label>
+        <select id="workplan-year">
+            <option value="2024">2024</option>
+            <!-- Add other years as needed -->
+        </select>
+    </div>
+</div>
+
+<div class="objective-section par-card">
+    <label for="objective"><strong>Objective:</strong></label>
+    <textarea id="objective" style="width: 95%;" placeholder="Enter your objective here"></textarea>
+</div>
+<div class="buttons">
+    <button class="cancel-button">Cancel</button>
+    <button class="update-button">Update</button>
+</div>
+
+@code {
+
+}

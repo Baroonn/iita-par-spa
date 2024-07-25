@@ -1,0 +1,30 @@
+﻿@page "/edit-workplan"
+<div class="par-card">
+    <div class="record-header">
+        <h1>Workplan Details - Edit Workplan</h1>
+        <p>NRS Workplan</p>
+    </div>
+    <div class="record-details">
+        <p><strong>Username:</strong> ADEMOLA Patrick</p>
+        <div class="year-select">
+            <label for="workplan-year">Workplan Year:</label>
+            <select id="workplan-year">
+                <option value="2024">2024</option>
+                <!-- Add other years as needed -->
+            </select>
+        </div>
+    </div>
+</div>
+
+<form class="edit-workplan-form par-card">
+    <label for="objective">Objective:</label>
+    <textarea id="objective" style="width: 95%;" name="objective"></textarea>
+    <div class="form-actions">
+        <button type="button" class="cancel-button">Cancel</button>
+        <button type="submit" class="update-button">Update</button>
+    </div>
+</form>
+
+@code {
+
+}

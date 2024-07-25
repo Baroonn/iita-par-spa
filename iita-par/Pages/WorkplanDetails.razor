@@ -1,0 +1,93 @@
+﻿@page "/workplan-details"
+@inject NavigationManager Navigation
+
+<div class="par-card">
+    <div class="record-header">
+        <h1>Workplan Details - 2024</h1>
+        <p>NRS Workplan</p>
+    </div>
+    <div class="record-details">
+        <table>
+            <tr>
+                <td style="width: 200px"><strong>Username:</strong></td>
+                <td>ADEMOLA Patrick</td>
+            </tr>
+            <tr>
+                <td><strong>Status:</strong></td>
+                <td>DRAFT</td>
+            </tr>
+            <tr>
+                <td><strong>Date Created:</strong></td>
+                <td>16/04/2024</td>
+            </tr>
+            <tr>
+                <td><strong>Objective:</strong></td>
+                <td>Enhance Employee Engagement and Satisfaction</td>
+            </tr>
+        </table>
+        <p> </p>
+        <p> </p>
+        <p><strong></strong> </p>
+        <p><strong></strong> </p>
+    </div>
+</div>
+
+<div class="workplan-actions par-card">
+    <p style="float:left;margin-right:20px;">Manage your workplan: </p>
+    <button class="edit-button" @onclick="(() => NavigateToEditWorkplan())">Edit Workplan</button>
+    <button class="add-kpi-button" @onclick="(() => NavigateToAddKpi())">Add KPIs</button>
+    <button class="delete-button">Delete</button>
+</div>
+<div class="par-card" style="margin-top:20px;">
+    <div class="kpi-list-header">
+        <h2>List of Workplan KPIs</h2>
+        <div>
+            <label for="year-select">Pick a year:</label>
+            <select id="year-select">
+                <option value="2024">2024</option>
+                <!-- Add other years as needed -->
+            </select>
+        </div>
+
+    </div>
+    <div class="kpi-list">
+        <div class="kpi-item">
+            <h3>1. Complete quarterly employee engagement surveys with a response rate of at least 75%.</h3>
+            <p><strong>Activity for this KPI:</strong> Design and distribute surveys; promote participation through internal communications.</p>
+            <p><strong>Milestone 1st Qtr:</strong> Survey design finalized and distributed; achieve 75% response rate.</p>
+            <p><strong>Milestone 2nd Qtr:</strong> Analyze Q1 survey results; implement feedback initiatives.</p>
+            <p><strong>Milestone 3rd Qtr:</strong> Conduct Q2 survey; maintain 75% response rate.</p>
+            <p><strong>Milestone 4th Qtr:</strong> Review Q3 survey results; report annual trends.</p>
+            <p><strong>Created:</strong> 20/04/2024</p>
+            <div class="kpi-actions">
+                <button class="delete-kpi-button">Delete KPI</button>
+                <button class="edit-objective-button">Edit Objective</button>
+            </div>
+        </div>
+        <div class="kpi-item">
+            <h3>2. Achieve an average engagement score of 80% or higher.</h3>
+            <p><strong>Activity for this KPI:</strong> Implement engagement programs and track scores.</p>
+            <p><strong>Milestone 1st Qtr:</strong> Baseline engagement score established; initial programs launched.</p>
+            <p><strong>Milestone 2nd Qtr:</strong> Mid-year review of engagement programs; adjust strategies.</p>
+            <p><strong>Milestone 3rd Qtr:</strong> Conduct engagement activities; measure improvements.</p>
+            <p><strong>Milestone 4th Qtr:</strong> Final engagement survey; achieve 80% average score.</p>
+            <p><strong>Created:</strong> 20/04/2024</p>
+            <div class="kpi-actions">
+                <button class="delete-kpi-button">Delete KPI</button>
+                <button class="edit-objective-button">Edit Objective</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private void NavigateToEditWorkplan()
+    {
+        Navigation.NavigateTo("/edit-workplan");
+    }
+
+    private void NavigateToAddKpi()
+    {
+        Navigation.NavigateTo("/add-kpis");
+    }
+}

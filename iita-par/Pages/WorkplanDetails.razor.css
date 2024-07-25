@@ -1,0 +1,125 @@
+﻿.record-header {
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+    .record-header h1 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .record-header p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+.record-details {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+    .record-details p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+.workplan-actions {
+    margin-top: 20px;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+    .workplan-actions button {
+        padding: 10px 15px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+.edit-button {
+    background-color: #5bc0de;
+    color: #fff;
+}
+
+.add-kpi-button {
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+.delete-button {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.kpi-list-header {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .kpi-list-header h2 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .kpi-list-header label {
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+#year-select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.kpi-list {
+    margin-top: 20px;
+}
+
+.kpi-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+    .kpi-item h3 {
+        margin-top: 0;
+        font-size: 16px;
+    }
+
+    .kpi-item p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+.kpi-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .kpi-actions button {
+        padding: 10px 15px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+.delete-kpi-button {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.edit-objective-button {
+    background-color: #f0ad4e;
+    color: #fff;
+}
