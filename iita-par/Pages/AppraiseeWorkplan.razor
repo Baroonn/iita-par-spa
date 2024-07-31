@@ -1,0 +1,87 @@
+﻿@page "/appraisee-workplan"
+
+<div style="margin-bottom:20px;" class="par-card">
+    <p> ADEMOLA Patrick on behalf of AUSTIN Matthew.</p>
+</div>
+<div class="header">
+    <h1>AUSTIN Matthew's Workplan</h1>
+    <p>NRS Professional</p>
+    <br>
+
+    <p class="contact-info">📧 Contact IITA DIMU - ITSA for help with software-technical issues with the Workplan application.</p>
+</div>
+<div class="actions">
+    <p>Add your workplan: </p>
+    <div class="add-workplan">
+        <a class="button" href="/add-new-record">Add new records to your Workplan 2025</a>
+        <a class="button" href="/import-workplan">Import new workplans from Excel (.xls) file</a>
+    </div>
+
+</div>
+<div class="workplan-section par-card">
+    <div class="objectives">
+        <h2>List of Workplan Objectives - 2024</h2>
+        <div class="objective">
+            <p><strong>1</strong> Contribute my quota to the achievement of the goals of my department.</p>
+            <a class="button" href="/workplan-details">Details</a>
+        </div>
+        <div class="objective">
+            <p><strong>2</strong> Enhance the efficiency and effectiveness of the IT department.</p>
+            <a class="button" href="/workplan-details">Details</a>
+        </div>
+        <div class="objective">
+            <p><strong>3</strong> Enhance Employee Engagement and Satisfaction.</p>
+            <a class="button" href="/workplan-details">Details</a>
+        </div>
+    </div>
+    <div class="approval-section">
+        <div class="year-selector">
+            <label for="year">Pick a year:</label>
+            <select id="year">
+                <option value="2024">2024</option>
+                <!-- Add other years as needed -->
+            </select>
+        </div>
+        <div class="approval-status">
+            <p>💡 Your Workplan has been submitted for approval</p>
+        </div>
+        <div class="approval-status">
+            <p>💡 Your Workplan is awaiting your approval.</p>
+            <textarea class="text-area" placeholder="Leave a comment:"></textarea>
+            <br>
+            <button class="submit-button">Reject</button>
+            <button class="submit-button">Approve</button>
+        </div>
+        <div class="action-logs">
+            <h2>💡 Workplan Action Logs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Action</th>
+                        <th>Details</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>29/11/2023 11:28</td>
+                        <td>SUBMITTED</td>
+                        <td>Workplan Submitted by ADEMOLA Patrick</td>
+                        <td>Initial Submission</td>
+                    </tr>
+                    <tr>
+                        <td>18/12/2023 14:47</td>
+                        <td>APPROVED</td>
+                        <td>Workplan Approved by DAVID Smith</td>
+                        <td>Final Approval</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

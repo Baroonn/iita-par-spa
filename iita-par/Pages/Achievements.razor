@@ -1,4 +1,5 @@
 ﻿@page "/achievements"
+@inject NavigationManager Navigation;
 
 <div class="achievements-header par-card">
     <h1>Achievements</h1>
@@ -10,17 +11,26 @@
     <h2>List of Workplan Objectives - 2024</h2>
     <div class="objective">
         <h3>1. Contribute my quota to the achievement of the goals of my department.</h3>
-        <button class="toggle-details">Show workplan details</button>
-        <div class="workplan-details">
-            <p><strong>KPI Text:</strong> Complete assigned departmental tasks and projects with a minimum accuracy rate of 90% and within the allocated deadlines.</p>
-            <p><strong>KPI Activity:</strong> Collaborate effectively with team members on project tasks, attend all departmental meetings, provide regular progress updates, and submit all deliverables on or before the deadlines.</p>
-            <div class="achievement-details">
-                <p><strong>Achievement:</strong> Completed Workplan</p>
-                <p><strong>Comment:</strong> None</p>
-                <button class="edit-button">Edit</button>
-                <button class="delete-button">Delete</button>
+        <button @onclick="(()=>showDetails = !showDetails)" class="toggle-details">Show workplan details</button>
+
+        @if (showDetails)
+        {
+            <div class="workplan-details">
+                <div class="kpi-section">
+                    <p><strong>KPI Text:</strong> Complete assigned departmental tasks and projects with a minimum accuracy rate of 90% and within the allocated deadlines.</p>
+                    <p><strong>KPI Activity:</strong> Collaborate effectively with team members on project tasks, attend all departmental meetings, provide regular progress updates, and submit all deliverables on or before the deadlines.</p>
+                </div>
+                <div class="achievement-section">
+                    <p><strong>Achievement:</strong> Completed Workplan</p>
+                    <p><strong>Comment:</strong> None</p>
+                    <div class="buttons">
+                        <button class="delete-btn">Delete</button>
+                        <button class="edit-btn" @onclick="(()=>NavigateToEditAchievement())">Edit</button>
+                    </div>
+                </div>
             </div>
-        </div>
+        }
+        
         <button class="add-achievement-button">Add achievement to "Contribute my quota to the achievement..."</button>
     </div>
     <div class="objective">
@@ -36,5 +46,10 @@
 </div>
 
 @code {
+    private bool showDetails = true;
 
+    private void NavigateToEditAchievement()
+    {
+        Navigation.NavigateTo("/edit-achievement");
+    }
 }

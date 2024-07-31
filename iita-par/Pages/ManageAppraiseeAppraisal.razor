@@ -1,0 +1,72 @@
+﻿@page "/manage-appraisee-appraisal"
+
+<div class="header par-card">
+    <h2>Manage Appraisees' Appraisal(s)</h2>
+    <p>NRS Appraisals</p>
+    <p>Username: <strong>ADEMOLA Patrick</strong></p>
+    <p>
+        Workplan Year:
+        <select>
+            <option value="2024">2024</option>
+        </select>
+    </p>
+</div>
+<div class="par-card">
+    <h2 style="display: inline-block;width:80%;">NRS 1-6 Appraisals - 2024</h2><div style="display: inline-block;width:20%;" class="filter-year">
+        <label for="year">Pick a year:</label>
+        <select id="year" name="year">
+            <option value="2024">2024</option>
+            <!-- Add other years as needed -->
+        </select>
+    </div>
+    <table class="appraisal-table">
+        <thead>
+            <tr>
+                <th>Appraiser</th>
+                <th>Appraisee</th>
+                <th>Unit / Project</th>
+                <th>Country</th>
+                <th>Eligibility</th>
+                <th>Last updated</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ADEMOLA Patrick</td>
+                <td>
+                    <a href="#">R</a>
+                    <a href="#">WP</a>:
+                    <a href="#">2024</a>
+                    <a href="#">2023</a>
+                    <br>
+                    <a href="#">AUSTIN, Matthew [AUS621MA]</a>
+                </td>
+                <td></td>
+                <td>Nigeria</td>
+                <td></td>
+                <td>KOraegbunam, 15/01/2024</td>
+                <td>PENDING</td>
+            </tr>
+            <tr>
+                <td>ADEMOLA Patrick</td>
+                <td>
+                    <a href="#">R</a>
+                    <a href="#">WP</a>:
+                    <a href="#">2024</a>
+                    <a href="#">2023</a>
+                    <br>
+                    <a href="#">STEPHEN, Dele [STE431DE]</a>
+                </td>
+                <td></td>
+                <td>Nigeria</td>
+                <td></td>
+                <td>KOraegbunam, 15/01/2024</td>
+                <td>PENDING</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+@code {
+
+}
