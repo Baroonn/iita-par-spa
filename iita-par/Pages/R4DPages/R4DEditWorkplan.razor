@@ -1,4 +1,56 @@
-﻿<h3>R4DEditWorkplan</h3>
+﻿@page "/r4d-edit-workplan"
+
+<div class="header par-card">
+    <h2>My Workplan - Edit Workplan</h2>
+    <p>R4D Workplan</p>
+    <p>Username: ADEMOLA Patrick</p>
+</div>
+
+<form class="par-card">
+    <div class="form-group">
+        <label for="performance-criteria">Performance Criteria:</label>
+        <select id="performance-criteria">
+            <option value="">Select Criteria</option>
+            <!-- Add other options as needed -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Performance Criteria Description (500 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" />
+        <div class="word-count">0 word(s)</div>
+        <p class="note">Note: Max 500 word entries are allowed in the above field.</p>
+    </div>
+
+    <div class="form-group">
+        <label>Entry Year: <span>2024</span></label>
+    </div>
+
+    <div class="form-group" id="activity-year-text">
+        <label>Activity year determines the year when initial activities begin. Output target/products/deliverables/research outputs/milestones year determines when output target is reached.</label>
+    </div>
+
+    <div class="form-group">
+        <label for="activity-year">Activity Year:</label>
+        <select id="activity-year">
+            <option value="2024">2024</option>
+            <!-- Add other options as needed -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="output-year">Output target/products/deliverables/research outputs/milestones year:</label>
+        <select id="output-year">
+            <option value="2024">2024</option>
+            <!-- Add other options as needed -->
+        </select>
+    </div>
+
+    <div class="form-actions">
+        <button type="button" class="cancel">Cancel</button>
+        <button type="submit" class="update">Update</button>
+    </div>
+</form>
 
 @code {
 

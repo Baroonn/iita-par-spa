@@ -1,4 +1,78 @@
-﻿<h3>R4DAddNewActivity</h3>
+﻿@page "/r4d-add-new-activity"
+
+<div class="header par-card">
+    <h2>My Workplans - Add Activity</h2>
+    <p>R4D Workplan</p>
+    <p>User: ADEMOLA Patrick</p>
+    <p>Activity for: Management of resources</p>
+</div>
+
+<form class="par-card">
+    <div class="form-group">
+        <label for="activity-description">Activity Description (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" />
+        <div class="word-count">0 word(s)</div>
+    </div>
+
+    <div class="form-group">
+        <label for="fte">Scientist time allocation (FTE):</label>
+        <input type="text" id="fte" placeholder="Enter FTE allocation...">
+    </div>
+
+    <div class="form-group">
+        <label for="budget">Budget allocation (USD):</label>
+        <input type="text" id="budget" placeholder="Enter budget allocation...">
+    </div>
+
+    <div class="form-group">
+        <label for="cost-centers">Cost Center(s):</label>
+        <input type="text" id="cost-centers" placeholder="Enter cost center(s)...">
+    </div>
+
+    <div class="form-group">
+        <label for="internal-partnership">Partnership - Internal IITA:</label>
+        <input type="text" id="internal-partnership" placeholder="Enter internal partnership...">
+    </div>
+
+    <div class="form-group">
+        <label for="crp-partners">Partnership - CRP Partners:</label>
+        <input type="text" id="crp-partners" placeholder="Enter CRP partners...">
+    </div>
+
+    <div class="form-group">
+        <label for="other-partners">Partnership - Other External:</label>
+        <input type="text" id="other-partners" placeholder="Enter other external partnerships...">
+    </div>
+
+    <div class="form-group">
+        <label for="milestone1">Milestone 1st Qtr (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" />
+        <div class="word-count">0 word(s)</div>
+    </div>
+
+    <div class="form-group">
+        <label for="milestone2">Milestone 2nd Qtr (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" />
+        <div class="word-count">0 word(s)</div>
+    </div>
+
+    <div class="form-group">
+        <label for="milestone3">Milestone 3rd Qtr (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" />
+        <div class="word-count">0 word(s)</div>
+    </div>
+
+    <div class="form-group">
+        <label for="milestone4">Milestone 4th Qtr (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" />
+        <div class="word-count">0 word(s)</div>
+    </div>
+
+    <div class="form-actions">
+        <button type="button" class="cancel">Cancel</button>
+        <button type="submit" class="update">Update</button>
+    </div>
+</form>
 
 @code {
 
