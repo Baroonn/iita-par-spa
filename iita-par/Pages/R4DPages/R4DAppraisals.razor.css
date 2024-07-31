@@ -1,0 +1,64 @@
+﻿.appraisal-header {
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+    .appraisal-header h1 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .appraisal-header p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+.appraisal-content {
+    margin-top: 20px;
+}
+
+    .appraisal-content h2 {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+.filter-year {
+    margin-bottom: 20px;
+}
+
+    .filter-year label {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .filter-year select {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+.appraisal-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .appraisal-table th, .appraisal-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .appraisal-table th {
+        background-color: #f2f2f2;
+    }
+
+    .appraisal-table a {
+        margin: 0 5px;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+        .appraisal-table a:hover {
+            text-decoration: underline;
+        }
