@@ -1,0 +1,87 @@
+﻿.header, .notice, .appraisal-section, .additional-info {
+    margin-bottom: 20px;
+    
+}
+
+.header{
+    text-align: left;
+}
+
+    .header h2 {
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .notice p, .additional-info p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .notice a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .notice a:hover {
+            text-decoration: underline;
+        }
+
+    .appraisal-section h3 {
+        margin-bottom: 10px;
+    }
+
+.workplan-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    vertical-align: auto;
+    justify-content: space-between;
+}
+
+.inner{
+
+}
+    .workplan-actions button {
+        padding: 10px;
+        font-size: 14px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+    }
+
+        .workplan-actions button:hover, .year-picker select:hover {
+            background-color: #0056b3;
+        }
+
+.year-picker {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td {
+    font-size: 14px;
+}
