@@ -1,5 +1,53 @@
-﻿<h3>R4DEditAchievement</h3>
+﻿@page "/r4d-edit-achievement"
 
-@code {
+<div class="header par-card">
+    <h2>Achievements - Edit Achievement</h2>
+    <p>R4D Workplan</p>
+    <p><strong>Username:</strong> ADEMOLA Patrick</p>
+    <div>
+        <label for="workplan-year">Workplan Achievement Year:</label>
+        <select id="workplan-year" name="workplan-year">
+            <option value="2024" selected>2024</option>
+            <!-- Add more options if necessary -->
+        </select>
+    </div>
 
-}
+    <div>
+        <label for="performance-criteria">Performance Criteria:</label>
+        <select id="performance-criteria" name="performance-criteria">
+            <!-- Add options for performance criteria -->
+            <option value="">Select</option>
+        </select>
+    </div>
+
+    <div>
+        <p><strong>Activity:</strong> Oversee and manage the planning, execution, and monitoring of project activities for subgrants and IITA.</p>
+    </div>
+</div>
+
+<form class="par-card" action="#" method="post" enctype="multipart/form-data">
+    
+
+    <div class="form-group">
+        <label for="achievement">Achievement:</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" />
+    </div>
+
+    <div class="form-group">
+        <label for="completion">Completion (%):</label>
+        <input type="number" id="completion" name="completion" placeholder="Enter completion percentage">
+    </div>
+
+    <div class="form-actions" style="width:100%;text-align:right!important;">
+        <button type="submit" id="update">Update</button>
+        <button type="button" id="cancel">Cancel</button>
+    </div>
+
+    <div class="form-group">
+        <label for="file">Attachments: No files attached.</label>
+        <input type="file" id="file" name="file">
+        <div style="width:100%;text-align:right!important;">
+            <button type="button" id="attach-file">Attach file</button>
+        </div> 
+    </div>
+</form>

@@ -1,5 +1,72 @@
-﻿<h3>R4DAchievements</h3>
+﻿@page "/r4d-achievements"
+
+<div class="header par-card">
+    <h2>Achievements</h2>
+    <p>R4D Workplan</p>
+    <p>Username: ADEMOLA Patrick</p>
+</div>
+
+<div class="workplan-objectives par-card">
+    <h3>List of Workplan Objectives - 2024</h3>
+    <div class="objective">
+        <h4>Workplan achievement - Supervision of project's activities (Subgrants and IITA)</h4>
+        <div class="details">
+            <button class="toggle-details" @onclick="(()=> showContent = !showContent)">Show workplan details</button>
+            @if (showContent)
+            {
+                <div class="details-content">
+                    <p><strong>Cost Centers:</strong> 5324</p>
+                    <p><strong>Proposed Budget (USD):</strong> 4000</p>
+                    <p><strong>Q1 Milestones:</strong> Develop and approve detailed project plans and schedules.</p>
+                    <p><strong>Q2 Milestones:</strong> Ensure 50% completion of planned activities by all subgrantees and IITA.</p>
+                    <p><strong>Q3 Milestones:</strong> Achieve 75% completion of project activities.</p>
+                    <p><strong>Q4 Milestones:</strong> Complete all planned project activities and submit final reports.</p>
+                    <p><strong>Workplan/Performance Criteria Description:</strong> Supervision of project's activities (Subgrants and IITA)</p>
+                    <p><strong>MTP Output/Performance Criteria:</strong> Workplan Achievement</p>
+                    <p><strong>Achievement:</strong> Successfully supervised and completed all project activities, meeting all milestones and delivering...</p>
+                    <p><strong>Completion:</strong> 100%</p>
+                </div>
+            }
+
+        </div>
+        <div class="action">
+            <button class="delete">Delete</button>
+            <button class="edit">Edit</button>
+            <button class="add-achievement">Add achievement to "Oversee and manage the planning, execution,..."</button>
+        </div>
+    </div>
+
+    <div class="objective">
+        <h4>Enhance the efficiency and effectiveness of the IT department</h4>
+        <div class="details">
+            <button class="toggle-details">Show workplan details</button>
+            <div class="details-content">
+                <!-- Add workplan details content here if necessary -->
+            </div>
+        </div>
+        <div class="action">
+            <button class="delete">Delete</button>
+            <button class="edit">Edit</button>
+            <button class="add-achievement">Add achievement to "Enhance the efficiency and effectiveness..."</button>
+        </div>
+    </div>
+
+    <div class="objective">
+        <h4>Enhance Employee Engagement and Satisfaction</h4>
+        <div class="details">
+            <button class="toggle-details">Show workplan details</button>
+            <div class="details-content">
+                <!-- Add workplan details content here if necessary -->
+            </div>
+        </div>
+        <div class="action">
+            <button class="delete">Delete</button>
+            <button class="edit">Edit</button>
+            <button class="add-achievement">Add achievement to "Enhance Employee Engagement and Satisfaction"</button>
+        </div>
+    </div>
+</div>
 
 @code {
-
+    private bool showContent = false;
 }

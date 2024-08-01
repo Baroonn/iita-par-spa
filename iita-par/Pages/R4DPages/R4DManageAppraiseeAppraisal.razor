@@ -1,180 +1,75 @@
 ﻿@page "/r4d-manage-appraisee-appraisal"
 
-<div class="par-card">
-    <h2>Manage Appraisees' Appraisals - Preview R4D Appraisal for AUSTIN Matthew</h2>
+<div style="margin-bottom:20px;" class="par-card">
+    <p> ADEMOLA Patrick on behalf of AUSTIN Matthew.</p>
+</div>
+<div class="header par-card">
+    <h2>Manage Appraisees' Appraisal(s)</h2>
     <p>NRS Appraisals</p>
-    <br />
-    <table>
-        <tbody>
-            <tr>
-                <td><strong>Appraisee:</strong></td>
-                <td>AUSTIN Matthew</td>
-            </tr>
-            <tr>
-                <td><strong>Appraisee Country Status:</strong></td>
-                <td>Nigeria</td>
-            </tr>
-            <tr>
-                <td><strong>Appraiser:</strong> </td>
-                <td>ADEMOLA Patrick, ESADEAPT</td>
-            </tr>
-            <tr>
-                <td><strong>Last modified:</strong></td>
-                <td>K.Oraegbunam, 30/01/2024</td>
-            </tr>
-            <tr>
-                <td><strong>Status:</strong></td>
-                <td>DRAFT</td>
-            </tr>
-            <tr>
-                <td><strong>Final Score:</strong></td>
-                <td>380.0</td>
-            </tr>
-            <tr>
-                <td><strong>Rating Summary:</strong></td>
-                <td>Consistently Exceeds Expectations</td>
-            </tr>
-        </tbody>
-    </table>
+    <p>Username: <strong>ADEMOLA Patrick</strong></p>
+    <p>
+        Workplan Year:
+        <select>
+            <option value="2024">2024</option>
+        </select>
+    </p>
 </div>
 <div class="par-card">
-    <h3>Scores for 2024</h3>
-    <table id="bordered-table" style="width:100%;border: 1px solid #ddd;">
+    <h2 style="display: inline-block;width:80%;">NRS 1-6 Appraisals - 2024</h2><div style="display: inline-block;width:20%;" class="filter-year">
+        <label for="year">Pick a year:</label>
+        <select id="year" name="year">
+            <option value="2024">2024</option>
+            <!-- Add other years as needed -->
+        </select>
+    </div>
+    <table class="appraisal-table">
         <thead>
             <tr>
-                <th>Criteria</th>
-                <th>Weight</th>
-                <th>Score</th>
-                <th>Weight * Score</th>
-                <th>Weight 2025</th>
+                <th>Appraiser</th>
+                <th>Appraisee</th>
+                <th>Unit / Project</th>
+                <th>Country</th>
+                <th>Eligibility</th>
+                <th>Last updated</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Number of Publications</td>
-                <td>10.0%</td>
-                <td>4.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
+                <td>ADEMOLA Patrick</td>
+                <td>
+                    <a href="#">R</a>
+                    <a href="#">WP</a>:
+                    <a href="#">2024</a>
+                    <a href="#">2023</a>
+                    <br>
+                    <a href="#">AUSTIN, Matthew [AUS621MA]</a>
+                </td>
+                <td></td>
+                <td>Nigeria</td>
+                <td></td>
+                <td>KOraegbunam, 15/01/2024</td>
+                <td>PENDING</td>
             </tr>
             <tr>
-                <td>Communications</td>
-                <td>10.0%</td>
-                <td>4.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
-            </tr>
-            <tr>
-                <td>Resource mobilization</td>
-                <td>10.0%</td>
-                <td>4.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
-            </tr>
-            <tr>
-                <td>Capacity development</td>
-                <td>10.0%</td>
-                <td>4.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
-            </tr>
-            <tr>
-                <td>Management of resources</td>
-                <td>10.0%</td>
-                <td>4.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
-            </tr>
-            <tr>
-                <td>Compliance with QA/QC policies and MELRs</td>
-                <td>10.0%</td>
-                <td>3.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
-            </tr>
-            <tr>
-                <td>Team contribution and partnership facilitation</td>
-                <td>10.0%</td>
-                <td>4.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
-            </tr>
-            <tr>
-                <td>Other professional activities</td>
-                <td>10.0%</td>
-                <td>4.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
-            </tr>
-            <tr>
-                <td>Work plan achievement</td>
-                <td>10.0%</td>
-                <td>4.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
-            </tr>
-            <tr>
-                <td>Personal Effectiveness</td>
-                <td>10.0%</td>
-                <td>4.0</td>
-                <td>20.0</td>
-                <td>10.0%</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td><strong>Total</strong></td>
-                <td>100.0%</td>
-                <td>37.0</td>
-                <td>380.0</td>
-                <td>100.0%</td>
-            </tr>
-        </tfoot>
-    </table>
-    <h3>Rating</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Rating</th>
-                <th>Indicator/Range</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Consistently Exceeds Expectations</td>
-                <td>380 - 400</td>
-            </tr>
-            <tr>
-                <td>Exceeds Expectations</td>
-                <td>310 - 379</td>
-            </tr>
-            <tr>
-                <td>Meets Expectations</td>
-                <td>240 - 309</td>
-            </tr>
-            <tr>
-                <td>Below Expectations</td>
-                <td>200 - 239</td>
-            </tr>
-            <tr>
-                <td>Unacceptable</td>
-                <td>Below 200</td>
+                <td>ADEMOLA Patrick</td>
+                <td>
+                    <a href="#">R</a>
+                    <a href="#">WP</a>:
+                    <a href="#">2024</a>
+                    <a href="#">2023</a>
+                    <br>
+                    <a href="#">STEPHEN, Dele [STE431DE]</a>
+                </td>
+                <td></td>
+                <td>Nigeria</td>
+                <td></td>
+                <td>KOraegbunam, 15/01/2024</td>
+                <td>PENDING</td>
             </tr>
         </tbody>
     </table>
 </div>
-<div class="comments par-card">
-    <div><strong>Does appraisee belong to any committees?</strong> No</div>
-    <div><strong>General comments on Staff's conduct and performance</strong> Null</div>
-    <div><strong>What are the strengths of the staff?</strong> Null</div>
-    <div><strong>What areas need to be improved?</strong> Null</div>
-    <div><strong>Recommended staff development if any</strong> Null</div>
-    <div><strong>If your final rating is Outstanding or Needs Improvement, please provide justification, supporting the outstanding work or poor performance of the staff</strong> Null</div>
-    <div><strong>Staff comments on appraisal</strong> Satisfied</div>
-    <div><strong>Did the staff appeal this appraisal rating?</strong> No</div>
-    <div><strong>2024 Course Completion Status</strong> No files attached</div>
-</div>
-
 @code {
 
 }
