@@ -1,4 +1,246 @@
-﻿<h3>R4DEditAppraiseeAppraisal</h3>
+﻿@page "/r4d-edit-appraisee-appraisal"
+
+<div class="container">
+    <div class="par-card">
+        <h2>Manage Appraisees' Appraisals - Edit R4D Appraisal for AUSTIN Matthew</h2>
+        <p><strong>Appraisee:</strong> AUSTIN Matthew</p>
+        <p><strong>Appraisee Country Station:</strong> Nigeria</p>
+        <p><strong>Appraiser:</strong> ADENOLA, Patrick, ESADE/PRAT</p>
+        <p><strong>Last modified:</strong> KMovagharn, 30/01/2024</p>
+        <p><strong>Status:</strong> DRAFT</p>
+        <p><strong>Rating Summary:</strong> Consistently Exceeds Expectation</p>
+    </div>
+
+    <div class="par-card">
+        <h2>Scores for 2024</h2>
+        <h6>Assign scores from 1 (lowest) to 4 (highest) for the year 2024.</h6>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"></th>
+                    <th colspan="2">Lowest</th>
+                    <th colspan="3">Highest</th>
+                    <th colspan="2"></th>
+                </tr>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Weight</th>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>Score</th>
+                    <th>Weight 2025</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Number of Publications:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="publications" value="1"></td>
+                    <td><input type="radio" name="publications" value="2"></td>
+                    <td><input type="radio" name="publications" value="3"></td>
+                    <td><input type="radio" name="publications" value="4" checked></td>
+                    <td><input type="radio" name="publications" value="5"></td>
+                    <td><span>20.0</span></td>
+                    <td><span>20.0</span></td>
+                </tr>
+                <tr>
+                    <td>Communications:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="communications" value="1"></td>
+                    <td><input type="radio" name="communications" value="2"></td>
+                    <td><input type="radio" name="communications" value="3"></td>
+                    <td><input type="radio" name="communications" value="4" checked></td>
+                    <td><input type="radio" name="communications" value="5"></td>
+                    <td><span>20.0</span></td>
+                    <td><span>20.0</span></td>
+                </tr>
+                <tr>
+                    <td>Resource mobilization:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="resources" value="1"></td>
+                    <td><input type="radio" name="resources" value="2"></td>
+                    <td><input type="radio" name="resources" value="3" checked></td>
+                    <td><input type="radio" name="resources" value="4"></td>
+                    <td><input type="radio" name="resources" value="5"></td>
+                    <td><span>60.0</span></td>
+                    <td><span>60.0</span></td>
+                </tr>
+                <tr>
+                    <td>Capacity development:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="capacity" value="1"></td>
+                    <td><input type="radio" name="capacity" value="2"></td>
+                    <td><input type="radio" name="capacity" value="3"></td>
+                    <td><input type="radio" name="capacity" value="4" checked></td>
+                    <td><input type="radio" name="capacity" value="5"></td>
+                    <td><span>20.0</span></td>
+                    <td><span>20.0</span></td>
+                </tr>
+                <tr>
+                    <td>Management of resources:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="management" value="1"></td>
+                    <td><input type="radio" name="management" value="2"></td>
+                    <td><input type="radio" name="management" value="3"></td>
+                    <td><input type="radio" name="management" value="4" checked></td>
+                    <td><input type="radio" name="management" value="5"></td>
+                    <td><span>20.0</span></td>
+                    <td><span>20.0</span></td>
+                </tr>
+                <tr>
+                    <td>Compliance with QA/QI policies and MEL:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="compliance" value="1"></td>
+                    <td><input type="radio" name="compliance" value="2"></td>
+                    <td><input type="radio" name="compliance" value="3"></td>
+                    <td><input type="radio" name="compliance" value="4" checked></td>
+                    <td><input type="radio" name="compliance" value="5"></td>
+                    <td><span>20.0</span></td>
+                    <td><span>20.0</span></td>
+                </tr>
+                <tr>
+                    <td>Team contribution and partnership facilitation:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="team" value="1"></td>
+                    <td><input type="radio" name="team" value="2"></td>
+                    <td><input type="radio" name="team" value="3"></td>
+                    <td><input type="radio" name="team" value="4" checked></td>
+                    <td><input type="radio" name="team" value="5"></td>
+                    <td><span>20.0</span></td>
+                    <td><span>20.0</span></td>
+                </tr>
+                <tr>
+                    <td>Other professional activities:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="activities" value="1"></td>
+                    <td><input type="radio" name="activities" value="2"></td>
+                    <td><input type="radio" name="activities" value="3"></td>
+                    <td><input type="radio" name="activities" value="4" checked></td>
+                    <td><input type="radio" name="activities" value="5"></td>
+                    <td><span>20.0</span></td>
+                    <td><span>20.0</span></td>
+                </tr>
+                <tr>
+                    <td>Work plan achievement:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="work_plan" value="1"></td>
+                    <td><input type="radio" name="work_plan" value="2"></td>
+                    <td><input type="radio" name="work_plan" value="3"></td>
+                    <td><input type="radio" name="work_plan" value="4" checked></td>
+                    <td><input type="radio" name="work_plan" value="5"></td>
+                    <td><span>20.0</span></td>
+                    <td><span>20.0</span></td>
+                </tr>
+                <tr>
+                    <td>Personal Effectiveness:</td>
+                    <td>10.0%</td>
+                    <td><input type="radio" name="effectiveness" value="1"></td>
+                    <td><input type="radio" name="effectiveness" value="2"></td>
+                    <td><input type="radio" name="effectiveness" value="3"></td>
+                    <td><input type="radio" name="effectiveness" value="4" checked></td>
+                    <td><input type="radio" name="effectiveness" value="5"></td>
+                    <td><span>80.0</span></td>
+                    <td><span>80.0</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="rating">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rating</th>
+                        <th>Indicator/Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Consistently Exceeds Expectations</td>
+                        <td>380 - 400</td>
+                    </tr>
+                    <tr>
+                        <td>Exceeds Expectations</td>
+                        <td>370 - 379</td>
+                    </tr>
+                    <tr>
+                        <td>Meets Expectations</td>
+                        <td>240 - 369</td>
+                    </tr>
+                    <tr>
+                        <td>Below Expectations</td>
+                        <td>200 - 239</td>
+                    </tr>
+                    <tr>
+                        <td>Unacceptable</td>
+                        <td>Below 200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="par-card">
+        <h3>Comments & Other Details</h3>
+        <form>
+            <label for="strengths">Strengths:</label>
+            <textarea id="strengths" name="strengths"></textarea>
+
+            <label for="weaknesses">Weaknesses:</label>
+            <textarea id="weaknesses" name="weaknesses"></textarea>
+
+            <label for="training">Training needs:</label>
+            <textarea id="training" name="training"></textarea>
+
+            <label for="appraiser_comments">Appraiser comments:</label>
+            <textarea id="appraiser_comments" name="appraiser_comments"></textarea>
+
+            <div class="appeal">
+                <p>Do you want to appeal this appraisal rating?</p>
+                <input type="radio" id="appeal_no" name="appeal" value="no" checked>
+                <label for="appeal_no">No</label>
+                <input type="radio" id="appeal_yes" name="appeal" value="yes">
+                <label for="appeal_yes">Yes</label>
+            </div>
+
+            <p><strong>Staff comments: </strong> Satisfied</p>
+
+            <p><strong>Did the staff appeal this appraisal rating? </strong> No</p>
+
+            <div class="rating-summary" style="display:flex; gap: 20px;">
+                <h2>Rating Summary</h2>
+                <div>
+                    <input type="radio" id="consistently_exceeds" name="rating_summary" value="consistently_exceeds" checked>
+                    <label for="consistently_exceeds">Consistently Exceeds Expectations</label>
+                    <br />
+                    <input type="radio" id="exceeds" name="rating_summary" value="exceeds">
+                    <label for="exceeds">Exceeds Expectations</label>
+                    <br />
+                    <input type="radio" id="meets" name="rating_summary" value="meets">
+                    <label for="meets">Meets Expectations</label>
+                    <br />
+                    <input type="radio" id="below" name="rating_summary" value="below">
+                    <label for="below">Below Expectations</label>
+                    <br />
+                    <input type="radio" id="unacceptable" name="rating_summary" value="unacceptable">
+                    <label for="unacceptable">Unacceptable</label>
+                </div>
+            </div>
+
+            <label for="final_comments">If your final rating is Consistently Exceeds Expectations or Unacceptable, please provide justification, supporting the outstanding work or poor work performance of the staff:</label>
+            <textarea id="final_comments" name="final_comments"></textarea>
+
+            <div class="buttons">
+                <button type="button">Save draft</button>
+                <button type="submit">Preview & Finalize</button>
+            </div>
+        </form>
+    </div>
+    
+</div>
 
 @code {
 

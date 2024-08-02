@@ -1,4 +1,186 @@
-﻿<h3>R4DPreviewAppraiseeAppraisal</h3>
+﻿@page "/r4d-preview-appraisee-appraisal"
+
+<div class="par-card">
+    <div class="header">
+        <h2>Manage Appraisees' Appraisals - Preview R4D Appraisal for AUSTIN Matthew</h2>
+        <p>R4D Appraisals</p>
+    </div>
+
+    <div class="appraisee-details">
+        <p>Appraisee: AUSTIN Matthew</p>
+        <p>Appraisee Country Station: Nigeria</p>
+        <p>Appraiser: ADEMOLA Patrick, R4DEPART</p>
+        <p>Last Modified: 30/07/2024</p>
+        <p>Status: DRAFT</p>
+        <p>Final Score: 380.0</p>
+        <p>Rating Summary: Consistently Exceeds Expectation</p>
+    </div>
+</div>
+
+<div class="par-card">
+    <div class="action">
+        <p style="display:inline-block;">Manage their workplan: </p>
+        <button>Edit Appraisal</button>
+        <button>Download PDF</button>
+        <button>Submit Final Score</button>
+    </div>
+    <hr />
+
+    <div class="scores">
+        <h3>Scores for 2024</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Weight</th>
+                    <th>Score</th>
+                    <th>Weight x Score</th>
+                    <th>Weight (20%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Number of Publications</td>
+                    <td>10.0%</td>
+                    <td>4.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Communication</td>
+                    <td>10.0%</td>
+                    <td>4.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Resource mobilization</td>
+                    <td>10.0%</td>
+                    <td>3.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Capacity development</td>
+                    <td>10.0%</td>
+                    <td>4.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Management of resources</td>
+                    <td>10.0%</td>
+                    <td>4.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Compliance with GAD/CO policies and MELIA</td>
+                    <td>10.0%</td>
+                    <td>4.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Team contribution and partnership facilitation</td>
+                    <td>10.0%</td>
+                    <td>4.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Other professional activities</td>
+                    <td>10.0%</td>
+                    <td>4.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Work plan achievement</td>
+                    <td>10.0%</td>
+                    <td>4.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Personal Effectiveness</td>
+                    <td>10.0%</td>
+                    <td>4.0</td>
+                    <td>20.0</td>
+                    <td>20.0</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>100.0%</td>
+                    <td>57.0</td>
+                    <td>380.0</td>
+                    <td>100.0%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="rating">
+        <h3>Rating</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rating</th>
+                    <th>Indicator/Range</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Consistently Exceeds Expectations</td>
+                    <td>380 - 400</td>
+                </tr>
+                <tr>
+                    <td>Exceeds Expectations</td>
+                    <td>370 - 379</td>
+                </tr>
+                <tr>
+                    <td>Meets Expectations</td>
+                    <td>240 - 369</td>
+                </tr>
+                <tr>
+                    <td>Below Expectations</td>
+                    <td>200 - 239</td>
+                </tr>
+                <tr>
+                    <td>Unacceptable</td>
+                    <td>Below 200</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="additional-comments">
+        <h3>Additional Comments</h3>
+        <p>Does appraisee belong to any committees?: No</p>
+        <p>General comments on Staff's conduct and performance: N/A</p>
+        <p>What are the strengths of the staff: N/A</p>
+        <p>What areas need to be improved: N/A</p>
+        <p>Recommend staff development if any: N/A</p>
+        <p>If your final rating is Outstanding or Needs Improvement, please provide justification, supporting this outstanding work or poor performance of the staff: N/A</p>
+    </div>
+    <hr />
+    <div class="staff-comments">
+        <h3>Comments by staff related to this appraisal</h3>
+        <textarea placeholder="Enter comments..."></textarea>
+        <div class="appeal">
+            <label for="appeal">Do you want to appeal this appraisal rating?</label>
+            <input type="radio" id="appeal-yes" name="appeal" value="yes">
+            <label for="appeal-yes">Yes</label>
+            <input type="radio" id="appeal-no" name="appeal" value="no" checked>
+            <label for="appeal-no">No</label>
+        </div>
+        <button>Save Comment</button>
+    </div>
+    <hr />
+    <div class="course-status">
+        <p>2024 Course Completion Status: No files attached</p>
+    </div>
+</div>
 
 @code {
 
