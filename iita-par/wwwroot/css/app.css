@@ -304,10 +304,19 @@ textarea {
 .action-item {
     width: 20%;
     text-align: center;
+    align-items: center;
 }
 
 .icon {
+    width: 70px;
+    height: 70px;
     font-size: 32px;
+    padding: 1rem;
+    border-radius: 50%;
+    color: var(--white);
+    background-color: var(--primary-1);
+    align-items: center;
+    margin: auto;
 }
 
 .action-item h3 {
@@ -428,6 +437,7 @@ a {
         /*border: grey 0px solid;*/
         display: block;
         transition: 0.3s;
+        font-weight: bold;
     }
 
         /* When you mouse over the navigation links, change their color */

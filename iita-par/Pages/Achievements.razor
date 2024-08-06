@@ -11,7 +11,7 @@
     <h2>List of Workplan Objectives - 2024</h2>
     <div class="objective">
         <h3>1. Contribute my quota to the achievement of the goals of my department.</h3>
-        <button @onclick="(()=>showDetails = !showDetails)" class="toggle-details">Show workplan details</button>
+        <button @onclick="(()=>showDetails = !showDetails)" class="toggle-details">@(showDetails?"Hide":"Show") workplan details</button>
 
         @if (showDetails)
         {
@@ -46,7 +46,7 @@
 </div>
 
 @code {
-    private bool showDetails = true;
+    private bool showDetails = false;
 
     private void NavigateToEditAchievement()
     {
