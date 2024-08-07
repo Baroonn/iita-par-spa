@@ -3,15 +3,16 @@
 <div class="header par-card">
     <h2>Achievements</h2>
     <p>R4D Workplan</p>
+    <hr />
     <p>Username: ADEMOLA Patrick</p>
 </div>
 
 <div class="workplan-objectives par-card">
-    <h3>List of Workplan Objectives - 2024</h3>
+    <h3><strong>List of Workplan Objectives - 2024</strong></h3>
     <div class="objective">
-        <h4>Workplan achievement - Supervision of project's activities (Subgrants and IITA)</h4>
+        <h6>Workplan achievement - Supervision of project's activities (Subgrants and IITA)</h6>
         <div class="details">
-            <button class="toggle-details" @onclick="(()=> showContent = !showContent)">Show workplan details</button>
+            <button class="toggle-details" @onclick="(()=> showContent = !showContent)">@(showContent?"Hide":"Show") workplan details</button>
             @if (showContent)
             {
                 <div class="details-content">
@@ -37,7 +38,7 @@
     </div>
 
     <div class="objective">
-        <h4>Enhance the efficiency and effectiveness of the IT department</h4>
+        <h6>Enhance the efficiency and effectiveness of the IT department</h6>
         <div class="details">
             <button class="toggle-details">Show workplan details</button>
             <div class="details-content">
@@ -52,7 +53,7 @@
     </div>
 
     <div class="objective">
-        <h4>Enhance Employee Engagement and Satisfaction</h4>
+        <h6>Enhance Employee Engagement and Satisfaction</h6>
         <div class="details">
             <button class="toggle-details">Show workplan details</button>
             <div class="details-content">
