@@ -1,0 +1,159 @@
+﻿/*@import url('c:\users\hp\source\repos\iita-par\iita-par\pages\adminpages\adminuserlist.razor.css');*/
+.dashboard-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+    .header h1 {
+        font-size: 24px;
+        color: #333;
+        margin: 0;
+    }
+
+.nav {
+    display: flex;
+    gap: 10px;
+}
+
+    .nav a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+    .search-bar label, .search-bar button {
+        font-weight: bold;
+    }
+
+    .search-bar input[type="text"] {
+        padding: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 200px;
+    }
+
+    .search-bar input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    .search-bar button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+.pagination {
+    margin-bottom: 10px;
+}
+
+    .pagination span, .pagination a {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    .pagination a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .user-table th, .user-table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .user-table th {
+        background-color: #f8f8f8;
+    }
+
+    .user-table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .user-table a {
+        text-decoration: none;
+        color: #007bff;
+        margin-right: 10px;
+    }
+
+        .user-table a:hover {
+            text-decoration: underline;
+        }
+
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+    .pagination span {
+        margin-right: 10px;
+        color: #555;
+    }
+
+.page-link {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #007bff;
+    border-radius: 4px;
+    border: 1px solid #007bff;
+    transition: all 0.3s ease;
+}
+
+    .page-link:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .page-link.active {
+        background-color: #007bff;
+        color: #fff;
+        cursor: default;
+    }
+
+.dots {
+    margin: 0 5px;
+    color: #555;
+}
+
+.next-prev {
+    font-weight: bold;
+}
+
+    .next-prev:hover {
+        background-color: #0056b3;
+    }

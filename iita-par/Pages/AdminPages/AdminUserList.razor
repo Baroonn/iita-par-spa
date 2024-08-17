@@ -1,0 +1,114 @@
+﻿@page "/admin-user-list"
+
+<div class="search-bar par-card">
+    <label for="search">Search:</label>
+    <input type="text" id="search" placeholder="Enter search term">
+    <input type="checkbox" id="ldap">
+    <label for="ldap">LDAP?</label>
+    <button style="background-color: green!important;">Search</button>
+    <button>Add New User</button>
+    <button>List all users</button>
+    <button>Roles</button>
+</div>
+
+<table class="user-table par-card">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mail</th>
+            <th>Login</th>
+            <th>Failed</th>
+            <th>Tools</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in users)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Mail</td>
+                <td>@item.Login</td>
+                <td>@item.LoginFailed</td>
+                <td><a href="#">Switch to</a><a href="#">Remove</a> <a href="#">Edit</a></td>
+            </tr>
+        }
+        <!-- Repeat <tr> for each user -->
+    </tbody>
+</table>
+
+<div class="pagination">
+    <span>Result page:</span>
+    <a href="#" class="page-link">1</a>
+    <a href="#" class="page-link">2</a>
+    <a href="#" class="page-link">3</a>
+    <a href="#" class="page-link">4</a>
+    <a href="#" class="page-link">5</a>
+    <span class="dots">...</span>
+    <a href="#" class="page-link">10</a>
+    <a href="#" class="page-link next-prev">Next</a>
+    <a href="#" class="page-link next-prev">Last</a>
+</div>
+@* 
+<div class="dashboard-container">
+    <div class="header">
+        <h1>Administration: IITA Dashboard</h1>
+        <div class="nav">
+            <a href="#">Public site</a>
+            <a href="#">Users</a>
+            <a href="#">IITA Country Stations</a>
+            <a href="#">Staff Dois</a>
+            <a href="#">IITA Committees</a>
+            <a href="#">Learning</a>
+            <a href="#">Browse</a>
+            <a href="#">Scheduled</a>
+            <a href="#">Log out</a>
+        </div>
+        <div class="user-info">
+            <span>Welcome, Omotayo Okoh</span>
+            <input type="text" placeholder="Switch to:">
+        </div>
+    </div>
+
+    
+</div> *@
+@code {
+    private List<User> users;
+
+    public class User
+    {
+        public string? Name { get; set; }
+        public string? Mail { get; set; }
+        public DateTime? Login { get; set; }
+        public DateTime? LoginFailed { get; set; }
+    }
+
+    protected override void OnInitialized()
+    {
+        users = [
+            new(){
+                Name = "Nangha, Ndisharron",
+                Mail = "N.Nangha@exchange",
+                Login = DateTime.Parse("05/02/2022 17:46:21"),
+                LoginFailed = DateTime.Parse("10/12/2021 15:01:19")
+            },
+        new(){
+                Name = "Nangha, Ndisharron",
+                Mail = "N.Nangha@exchange",
+                Login = DateTime.Parse("05/02/2022 17:46:21"),
+                LoginFailed = DateTime.Parse("10/12/2021 15:01:19")
+            },
+        new(){
+                Name = "Nangha, Ndisharron",
+                Mail = "N.Nangha@exchange",
+                Login = DateTime.Parse("05/02/2022 17:46:21"),
+                LoginFailed = DateTime.Parse("10/12/2021 15:01:19")
+            },
+        new(){
+                Name = "Nangha, Ndisharron",
+                Mail = "N.Nangha@exchange",
+                Login = DateTime.Parse("05/02/2022 17:46:21"),
+                LoginFailed = DateTime.Parse("10/12/2021 15:01:19")
+            }
+        ];
+    }
+}

@@ -9,10 +9,34 @@
  *@
 <div class="sidenav">
     <div class="side-container">
+        <div class="header" @onclick="@(() => showAdminSection = !showAdminSection)">
+            Admin Section
+        </div>
+        @if (showAdminSection)
+        {
+            <div class="content">
+                <a href="#" class="item">Snapshots</a>
+                <a href="#" class="item">Workplans</a>
+                <a href="#" class="item">Programs</a>
+                <a href="#" class="item">ALL R4D Appraisals</a>
+                <a href="#" class="item">ALL P4D Scientists Appraisals</a>
+                <a href="#" class="item">ALL IRS Professionals Appraisals</a>
+                <a href="#" class="item">Deadlines</a>
+                <a href="#" class="item">Import Users</a>
+                <a href="#" class="item">MTP</a>
+                <a href="#" class="item">Query</a>
+                <a href="#" class="item">Delegate</a>
+                <a href="#" class="item">Notifications</a>
+                <a href="#" class="item">Administration</a>
+            </div>
+        }
+    </div>
+
+    <div class="side-container">
         <div class="header">
             Appraisee Section
         </div>
-        <div class="content">
+        <div class="content" >
             <a href="workplan" class="item">My Workplans</a>
             <a href="my-appraisals" class="item">My Appraisals</a>
             <a href="view-my-pdf" class="item">View My PDFs</a>
@@ -79,6 +103,7 @@
 
 @code {
     private bool collapseNavMenu = true;
+    private bool showAdminSection = false;
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
