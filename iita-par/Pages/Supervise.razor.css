@@ -1,91 +1,88 @@
-﻿.supervise-header {
-    text-align: left;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
+﻿.supervise-header, .supervise-content {
+    background: linear-gradient(145deg, #f8f9fc, #e9ecef);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08), 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-    .supervise-header h1 {
-        margin: 0;
-        font-size: 22px;
-    }
-
-    .supervise-header p {
-        margin: 5px 0;
-        font-size: 14px;
-        color: #555;
-    }
-
-.supervise-content {
-    margin-top: 20px;
+.supervise-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 10px;
 }
 
-.form-group {
+.supervise-header p {
+    font-size: 16px;
+    color: #6c757d;
     margin-bottom: 20px;
 }
 
-    .form-group label {
-        display: block;
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-
-    .form-group p {
-        font-size: 14px;
-        color: #555;
-    }
-
-    .form-group select {
-        padding: 10px;
-        font-size: 14px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-
-.appraisals-header {
-    text-align: left;
-    padding: 20px 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin-top: 20px;
+.supervise-content h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 10px;
 }
 
-    .appraisals-header h2 {
-        margin: 0;
-        font-size: 20px;
-    }
-
-    .appraisals-header p {
-        margin: 5px 0;
-        font-size: 14px;
-        color: #555;
-    }
-
-.appraisee-list {
-    margin-top: 20px;
+.supervise-content p {
+    font-size: 16px;
+    color: #495057;
+    margin-bottom: 15px;
 }
 
-    .appraisee-list p {
-        font-size: 16px;
-        font-weight: bold;
-    }
+.supervise-content .appraisee-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-    .appraisee-list ul {
-        list-style: none;
-        padding: 0;
-    }
+.supervise-content .appraisee-list ul li {
+    margin-bottom: 10px;
+}
 
-        .appraisee-list ul li {
-            margin-bottom: 10px;
-        }
+.supervise-content .appraisee-list ul li a {
+    text-decoration: none;
+    color: #1d72b8;
+    font-weight: 500;
+    transition: color 0.4s ease, transform 0.3s ease;
+}
 
-            .appraisee-list ul li a {
-                font-size: 14px;
-                color: #007bff;
-                text-decoration: none;
-            }
+.supervise-content .appraisee-list ul li a:hover {
+    color: #0a58ca;
+    transform: translateY(-2px);
+}
 
-                .appraisee-list ul li a:hover {
-                    text-decoration: underline;
-                }
+.supervise-header hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+.supervise-content .form-group {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.table {
+    font-size: 14px;
+    width: 100%;
+    border-spacing: 0;
+}
+
+.table td {
+    padding: 8px 10px;
+}
+
+.table strong {
+    font-weight: 600;
+}

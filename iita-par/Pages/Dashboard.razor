@@ -1,5 +1,90 @@
 ﻿@page "/"
 @inject NavigationManager Navigation
+<style>
+
+.info-section {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-section:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+}
+
+.info-section h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.info-section p, .info-section a {
+    color: #555;
+    line-height: 1.6;
+}
+
+.action-item {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.5s ease, transform 0.4s ease;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-item:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+}
+
+.action-item .icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.action-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.action-item p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Additional Styles for a Nice Glow Effect */
+.info-section::before,
+.action-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+    z-index: 0;
+}
+
+.info-section:hover::before,
+.action-item:hover::before {
+    opacity: 1;
+}
+
+</style>
 
 <div class="main-header">
     <div class="main-header-content">
