@@ -1,74 +1,121 @@
-﻿.record-header {
+﻿/* Record Header with refined layout and modern styling */
+.record-header {
     text-align: left;
     padding-bottom: 20px;
+    margin-bottom: 30px;
     border-bottom: 1px solid #ddd;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-    .record-header h1 {
-        margin: 0;
-        font-size: 22px;
-    }
-
-    .record-header p {
-        margin: 5px 0;
-        font-size: 14px;
-        color: #555;
-    }
-
-.record-details {
-    margin-top: 20px;
+.record-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
 }
 
-    .record-details p {
-        margin: 5px 0;
-        font-size: 14px;
-    }
-
-    .record-details label {
-        margin-right: 10px;
-        font-size: 14px;
-    }
-
-#workplan-year {
-    padding: 5px;
+.record-header p {
+    margin: 5px 0;
     font-size: 14px;
+    color: #777;
+}
+
+/* Improved Record Details styling */
+.record-details {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.record-details p {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.record-details label {
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Styled Select Box */
+#workplan-year {
+    padding: 10px;
+    font-size: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+#workplan-year:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Import Section with modern styling */
 .import-section {
-    margin-top: 20px;
-    height: 200px;
-    padding: auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     text-align: left;
-    vertical-align: center;
-    margin-bottom: 50px;
 }
 
-    .import-section p {
-        margin: 5px 0;
-        font-size: 14px;
-    }
+.import-section p {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #555;
+}
 
-#import-section label {
+.import-section label {
     margin-right: 10px;
     font-size: 16px;
+    font-weight: 600;
+    color: #333;
 }
 
+/* File Upload Input with modern styling */
 #file-upload {
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
+    border-radius: 6px;
+    font-size: 15px;
     margin-right: 10px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+#file-upload:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Upload Button with modern hover effect */
 .upload-button {
-    padding: 10px 15px;
-    font-size: 14px;
+    padding: 12px 20px;
+    font-size: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: #f0ad4e;
+    background-color: #007bff;
     color: #fff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

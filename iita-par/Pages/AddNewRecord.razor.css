@@ -1,87 +1,128 @@
-﻿.record-header {
+﻿/* Record Header with subtle shadow and improved styling */
+.record-header {
     text-align: left;
     padding-bottom: 20px;
     border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
 }
 
-    .record-header h1 {
-        margin: 0;
-        font-size: 22px;
-    }
+.record-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: bold;
+}
 
-    .record-header p {
-        margin: 5px 0;
-        font-size: 14px;
-        color: #555;
-    }
+.record-header p {
+    margin: 5px 0;
+    font-size: 15px;
+    color: #7f8c8d;
+}
 
+/* Record Details with enhanced readability */
 .record-details {
     margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-    .record-details p {
-        margin: 5px 0;
-        font-size: 14px;
-    }
-
-    .record-details label {
-        margin-right: 10px;
-        font-size: 14px;
-    }
+.record-details p, .record-details label {
+    margin: 8px 0;
+    font-size: 15px;
+    color: #34495e;
+}
 
 textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fff;
+    color: #2c3e50;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     resize: none;
 }
 
-#workplan-year {
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.25);
+    outline: none;
 }
 
+/* Year Selection with modern input styling */
+#workplan-year {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #2c3e50;
+    transition: border-color 0.3s ease;
+}
+
+#workplan-year:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Objective Section with improved typography */
 .objective-section {
     margin-top: 20px;
 }
 
-    .objective-section label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 16px;
-    }
-
-#objective {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
+.objective-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: #2c3e50;
+    font-weight: bold;
 }
 
+/* Button Container with space between buttons */
 .buttons {
     margin-top: 20px;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 50px;
+    gap: 15px;
 }
 
-.cancel-button, .update-button {
-    padding: 10px 15px;
-    font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
+/* Cancel Button with hover and transition effects */
 .cancel-button {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: 1px solid #d9534f;
+    border-radius: 8px;
+    cursor: pointer;
     background-color: #fff;
     color: #d9534f;
-    border: 1px solid #d9534f;
-    margin-right: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
+.cancel-button:hover {
+    background-color: #d9534f;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Update Button with a modern gradient and hover effects */
 .update-button {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
     background-color: #f0ad4e;
     color: #fff;
+    background-image: linear-gradient(to right, #f0ad4e, #e99e3f);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.update-button:hover {
+    background-color: #ec971f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
 }
