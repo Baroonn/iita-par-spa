@@ -1,0 +1,40 @@
+﻿@typeparam TItem
+
+<table class="user-table">
+    <thead>
+        <tr>
+            @foreach (var property in typeof(TItem).GetProperties())
+            {
+                <th>@property.Name</th>
+            }
+            @if (AddTools)
+            {
+                <th>Tools</th>
+            }
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Items)
+        {
+            <tr>
+                @foreach (var property in typeof(TItem).GetProperties())
+                {
+                    <td>@property.GetValue(item)</td>
+                }
+                @if (AddTools)
+                {
+                    <td><a href="#">Switch to</a><a href="#">Remove</a> <a href="#">Edit</a></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<TItem> Items { get; set; }
+
+    [Parameter]
+    public bool AddTools { get; set; }
+}

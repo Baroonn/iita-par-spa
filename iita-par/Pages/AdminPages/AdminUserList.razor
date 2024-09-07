@@ -11,7 +11,7 @@
     <button>Roles</button>
 </div>
 
-<table class="user-table par-card">
+@* <table class="user-table par-card">
     <thead>
         <tr>
             <th>Name</th>
@@ -34,7 +34,11 @@
         }
         <!-- Repeat <tr> for each user -->
     </tbody>
-</table>
+</table> *@
+
+<div class="par-card">
+    <iita_par.Shared.DynamicTable TItem="User" Items="users" AddTools="true" />
+</div>
 
 <div class="pagination">
     <span>Result page:</span>
