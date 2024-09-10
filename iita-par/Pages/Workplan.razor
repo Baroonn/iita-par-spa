@@ -1,4 +1,9 @@
 ﻿@page "/workplan"
+@attribute [Authorize]
+
+@using Microsoft.AspNetCore.Authorization
+
+@inject HttpClient _httpClient;
 
 <div class="header">
     <h1>ADEMOLA Patrick's Workplan</h1>
