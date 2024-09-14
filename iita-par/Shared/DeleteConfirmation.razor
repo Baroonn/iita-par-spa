@@ -1,0 +1,21 @@
+﻿<div class="backdrop" style="@(ShowDialog ? "display:block" : "display:none")">
+    <div class="dialogi">
+        <h2>Confirm Action</h2>
+        <p>Are you sure you want to delete this item?</p>
+        <div class="dialog-buttons">
+            <button class="btn-confirm" @onclick="OnConfirm">Yes</button>
+            <button class="btn-cancel" @onclick="OnCancel">No</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public bool ShowDialog { get; set; } // Determines if the dialog is visible
+
+    [Parameter]
+    public EventCallback OnConfirm { get; set; } // Callback for confirming action
+
+    [Parameter]
+    public EventCallback OnCancel { get; set; } // Callback for canceling action
+}

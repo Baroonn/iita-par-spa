@@ -1,7 +1,8 @@
 ﻿@page "/workplan"
-@attribute [Authorize]
+@using Microsoft.AspNetCore.Authorization;
+@using iita_par.Authentication
 
-@using Microsoft.AspNetCore.Authorization
+@inherits AuthorizePage
 
 @inject HttpClient _httpClient;
 
@@ -23,10 +24,23 @@
 <div class="workplan-section par-card">
     <div class="objectives">
         <h2>List of Workplan Objectives - 2024</h2>
-        <div class="objective">
-            <p><strong>1</strong> Contribute my quota to the achievement of the goals of my department.</p>
-            <a class="button" href="/workplan-details">Details</a>
-        </div>
+        @if(objectives != null)
+        {
+            int count = 1;
+            @foreach(var item in objectives)
+            {
+                <div class="objective">
+                    <p><strong>@count</strong> @item.Objective </p>
+                    <a class="button" @onclick=@(() => NavigateToDetails(item.Id))>Details</a>
+                </div>
+                count++;
+            }
+        }
+        else
+        {
+            <p>Loading Objectives...</p>
+        }
+        @* 
         <div class="objective">
             <p><strong>2</strong> Enhance the efficiency and effectiveness of the IT department.</p>
             <a class="button" href="/workplan-details">Details</a>
@@ -34,12 +48,12 @@
         <div class="objective">
             <p><strong>3</strong> Enhance Employee Engagement and Satisfaction.</p>
             <a class="button" href="/workplan-details">Details</a>
-        </div>
+        </div> *@
     </div>
     <div class="approval-section">
         <div class="year-selector">
             <label for="year">Pick a year:</label>
-            <select id="year">
+            <select @bind=selectedYear id="year">
                 <option value="2024">2024</option>
                 <!-- Add other years as needed -->
             </select>
@@ -79,7 +93,3 @@
         </div>
     </div>
 </div>
-
-@code {
-
-}

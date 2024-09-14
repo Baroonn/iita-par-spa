@@ -1,4 +1,16 @@
 ﻿@page "/add-new-record"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using PAR.Shared.DTOs
+@using iita_par.Authentication
+@using Blazored.LocalStorage
+
+@inherits AuthorizePage
+
+@attribute [Authorize]
+
+@inject HttpClient _httpClient;
+@inject NavigationManager Navigation
 
 <div class="par-card">
     <div class="record-header">
@@ -8,22 +20,59 @@
     <div class="record-details">
         <p><strong>Username:</strong> ADEMOLA Patrick</p>
         <label for="workplan-year"><strong>Workplan Year:</strong></label>
-        <select id="workplan-year">
+        <select id="workplan-year" @bind="selectedYear">
             <option value="2024">2024</option>
             <!-- Add other years as needed -->
         </select>
     </div>
 </div>
 
-<div class="objective-section par-card">
-    <label for="objective"><strong>Objective:</strong></label>
-    <textarea id="objective" placeholder="Enter your objective here"></textarea>
-</div>
-<div class="buttons">
-    <button class="cancel-button">Cancel</button>
-    <button class="update-button">Update</button>
-</div>
+<EditForm Model="Objective" OnSubmit="Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="objective-section par-card">
+        <label for="objective"><strong>Objective:</strong></label>
+        <textarea @bind=Objective.Objective id="objective" placeholder="Enter your objective here"></textarea>
+    </div>
+    <div class="buttons">
+        <button class="cancel-button">Cancel</button>
+        <button type="submit" class="update-button">Update</button>
+    </div>
+</EditForm>
+
 
 @code {
+    [SupplyParameterFromForm]
+    private ObjectiveCreateDTO? Objective { get; set; }
 
+    private int selectedYear { get; set; }
+
+    protected override void OnInitialized() => Objective ??= new();
+
+    private async Task Submit()
+    {
+        try
+        {
+            Objective.Year = selectedYear;
+            var response = await _httpClient.PostAsJsonAsync<ObjectiveCreateDTO>($"workplans/objectives", Objective);
+            if (response.IsSuccessStatusCode)
+            {
+                ShowSuccess("Objective created successfully");
+                NavigateTo("workplan");
+            }
+            else if(response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                ShowError("Unauthorized. Please login again.");
+                await Logout();
+            }
+            else
+            {
+                ShowError("Unable to create objective. Please confirm that all required data is provided.");
+            }
+        }
+        catch(Exception ex)
+        {
+            ShowError(ex.Message);
+        }
+    }
 }

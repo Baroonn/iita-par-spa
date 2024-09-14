@@ -10,6 +10,7 @@
 @inject NavigationManager Navigation
 @inject ILocalStorageService LocalStorage
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IToastService toastService
 
 
 <div class="d-flex justify-content-center align-items-center vh-100">
@@ -83,6 +84,7 @@
         else
         {
             // Handle error
+            toastService.ShowError("Login not successful.");
         }
     }
 

@@ -102,6 +102,7 @@
 /* Objectives section with modern typography */
 .objectives {
     width: 60%;
+    overflow-y: auto;
 }
 
 .objectives h2 {

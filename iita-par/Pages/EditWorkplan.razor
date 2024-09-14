@@ -1,4 +1,11 @@
-﻿@page "/edit-workplan"
+﻿@page "/edit-workplan/{id:long}"
+@using PAR.Shared.DTOs
+@using iita_par.Authentication
+
+@inherits AuthorizePage
+
+@inject HttpClient _httpClient;
+
 <div class="par-card">
     <div class="record-header">
         <h1>Workplan Details - Edit Workplan</h1>
@@ -6,25 +13,62 @@
     </div>
     <div class="record-details">
         <p><strong>Username:</strong> ADEMOLA Patrick</p>
-        <div class="year-select">
+        @* <div class="year-select">
             <label for="workplan-year">Workplan Year:</label>
             <select id="workplan-year">
                 <option value="2024">2024</option>
                 <!-- Add other years as needed -->
             </select>
-        </div>
+        </div> *@
     </div>
 </div>
-
-<form class="edit-workplan-form par-card">
+<EditForm Model="ObjectiveUpdate" OnSubmit="UpdateObjective" class="edit-workplan-form par-card">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
     <label for="objective">Objective:</label>
-    <textarea id="objective" name="objective" placeholder="Enter your objectives here"></textarea>
+    <textarea @bind=ObjectiveUpdate.Objective id="objective" name="objective" placeholder="Enter your objectives here"></textarea>
     <div class="form-actions">
         <button type="button" class="cancel-button">Cancel</button>
         <button type="submit" class="update-button">Update</button>
     </div>
-</form>
+</EditForm>
+@* <form class="edit-workplan-form par-card">
+    
+</form> *@
 
 @code {
+    [Parameter]
+    public long Id { get; set; }
+    [SupplyParameterFromQuery]
+    public string? Objective { get; set; }
 
+    [SupplyParameterFromForm]
+    private ObjectiveUpdateDTO? ObjectiveUpdate { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        ObjectiveUpdate = new()
+        {
+            Objective = Objective
+        };
+    }
+
+    public async Task UpdateObjective()
+    {
+        var response = await _httpClient.PutAsJsonAsync<ObjectiveUpdateDTO>($"workplans/objectives/{Id}", ObjectiveUpdate);
+        if (response.IsSuccessStatusCode)
+        {
+            ShowSuccess("Objective updated successfully");
+            NavigateTo($"workplan-details/{Id}");
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+        {
+            ShowError("Unauthorized. Please login again.");
+            await Logout();
+        }
+        else
+        {
+            ShowError("Unable to update objective. Please confirm that all required data is provided.");
+        }
+    }
 }

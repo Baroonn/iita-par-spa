@@ -1,11 +1,48 @@
-﻿@page "/add-kpis"
+﻿@page "/workplan/{id:long}/kpi/{kpiId:long}"
+@using PAR.Shared.DTOs
+@using iita_par.Authentication
+
+@inherits AuthorizePage
+
+@inject HttpClient _httpClient
+
 <div class="record-header par-card">
-    <h1>Workplan Details - Add KPIs</h1>
+    <h1>Workplan Details - @(KpiId>-1?"Edit":"Add") KPIs</h1>
     <p>NRS Workplan</p>
     <hr />
     <p><strong>Username:</strong> ADEMOLA Patrick</p>
 </div>
-<form class="add-kpis-form par-card">
+@if(Kpi != null)
+{
+    <EditForm Model="Kpi" class="add-kpis-form par-card" OnSubmit="Submit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <label for="kpi">Key Performance Indicators (KPI) (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" @bind-Value=Kpi.Kpitext Field="()=>Kpi.Kpitext" />
+        <br>
+        <label for="activity">Activity for this KPI (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" @bind-Value=Kpi.Activity Field="()=>Kpi.Activity"/>
+        <br>
+        <label for="milestone1">Milestone 1st Qtr (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" @bind-Value=Kpi.MileStoneQtr1 Field="()=>Kpi.MileStoneQtr1" />
+        <br>
+        <label for="milestone2">Milestone 2nd Qtr (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" @bind-Value=Kpi.MileStoneQtr2 Field="()=>Kpi.MileStoneQtr2"/>
+        <br>
+        <label for="milestone3">Milestone 3rd Qtr (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" @bind-Value=Kpi.MileStoneQtr3 Field="()=>Kpi.MileStoneQtr3"/>
+        <br>
+        <label for="milestone4">Milestone 4th Qtr (250 words max):</label>
+        <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js" @bind-Value=Kpi.MileStoneQtr4 Field="()=>Kpi.MileStoneQtr4"/>
+        <br>
+        <div class="form-actions">
+            <button type="button" class="cancel-button">Cancel</button>
+            <button type="submit" class="update-button">@(KpiId > -1 ? "Update" : "Create")</button>
+        </div>
+    </EditForm>
+}
+
+@* <form class="add-kpis-form par-card">
     <label for="kpi">Key Performance Indicators (KPI) (250 words max):</label>
     <Editor ScriptSrc="/tinymce/js/tinymce/tinymce.min.js"/>
     <br>
@@ -28,8 +65,62 @@
         <button type="button" class="cancel-button">Cancel</button>
         <button type="submit" class="update-button">Update</button>
     </div>
-</form>
+</form> *@
 
 @code {
+    [Parameter]
+    public long Id { get; set; }
+    [Parameter]
+    public long KpiId{get; set;}
 
+    [SupplyParameterFromForm]
+    private KpiCreateDTO? Kpi { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if(KpiId > -1)
+        {
+            Kpi = await _httpClient.GetFromJsonAsync<KpiCreateDTO>($"workplans/objectives/{Id}/kpis/{KpiId}");
+        }
+        else
+        {
+            Kpi = new();
+        }
+        
+    }
+
+    private async Task Submit()
+    {
+        try
+        {
+            HttpResponseMessage response;
+            if(KpiId > -1)
+            {
+                response = await _httpClient.PutAsJsonAsync<KpiCreateDTO>($"workplans/objectives/{Id}/kpis/{KpiId}", Kpi);
+            }
+            else
+            {
+                response = await _httpClient.PostAsJsonAsync<KpiCreateDTO>($"workplans/objectives/{Id}/kpis", Kpi);
+            }
+            
+            if (response.IsSuccessStatusCode)
+            {
+                ShowSuccess("Kpi updated successfully");
+                NavigateTo($"workplan-details/{Id}");
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                ShowError("Unauthorized. Please login again.");
+                await Logout();
+            }
+            else
+            {
+                ShowError("Unable to update kpi. Please confirm that all required data is provided.");
+            }
+        }
+        catch (Exception ex)
+        {
+            ShowError(ex.Message);
+        }
+    }
 }

@@ -1,0 +1,35 @@
+﻿@using Blazored.LocalStorage
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+
+@attribute [Authorize]
+
+@inject HttpClient _httpClient;
+@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager Navigation
+@inject IToastService toastService
+
+@code {
+    public async Task Logout()
+    {
+        await LocalStorage.RemoveItemAsync("authToken");
+        ((CustomAuthenticationStateProvider)AuthenticationStateProvider).MarkUserAsLoggedOut();
+        Navigation.NavigateTo("/login");
+    }
+
+    public void NavigateTo(string url)
+    {
+        Navigation.NavigateTo(url);
+    }
+
+    public void ShowError(string message)
+    {
+        toastService.ShowError(message);
+    }
+
+    public void ShowSuccess(string message)
+    {
+        toastService.ShowSuccess(message);
+    }
+}

@@ -1,4 +1,5 @@
 using Blazored.LocalStorage;
+using Blazored.Toast;
 using iita_par;
 using iita_par.Authentication;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -20,5 +21,5 @@ builder.Services.AddScoped(sp =>
 
 builder.Services.AddAuthorizationCore();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-
+builder.Services.AddBlazoredToast();
 await builder.Build().RunAsync();
