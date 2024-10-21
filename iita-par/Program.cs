@@ -14,7 +14,7 @@ builder.Services.AddScoped(sp =>
 {
     var client = new HttpClient(new CustomAuthorizationMessageHandler(sp.GetRequiredService<ILocalStorageService>()))
     {
-        BaseAddress = new Uri("https://localhost:7117/api/")
+        BaseAddress = new Uri("https://iitaparapi.azurewebsites.net/api/")
     };
     return client;
 });

@@ -22,11 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\iita-par-api\PAR.Shared\PAR.Shared.csproj" />
+    <None Include="Authentication\AuthorizedPage.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Authentication\AuthorizedPage.razor" />
+    <ProjectReference Include="..\PAR.Shared\PAR.Shared.csproj" />
   </ItemGroup>
 
 </Project>
