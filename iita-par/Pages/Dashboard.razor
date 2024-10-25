@@ -1,9 +1,9 @@
 ﻿@page "/"
 @inject NavigationManager Navigation
 <style>
-
 .info-section {
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    background: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(10px); 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.4s ease, transform 0.3s ease;
     padding: 20px;
@@ -11,6 +11,7 @@
     border-radius: 15px;
     position: relative;
     overflow: hidden;
+    
 }
 
 .info-section:hover {
@@ -24,13 +25,15 @@
     margin-bottom: 15px;
 }
 
-.info-section p, .info-section a {
+.info-section p,
+.info-section a {
     color: #555;
     line-height: 1.6;
 }
 
 .action-item {
-    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    background: rgba(255, 236, 210, 0.8); 
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.5s ease, transform 0.4s ease;
@@ -64,7 +67,7 @@
     line-height: 1.5;
 }
 
-/* Additional Styles for a Nice Glow Effect */
+
 .info-section::before,
 .action-item::before {
     content: '';
@@ -83,8 +86,8 @@
 .action-item:hover::before {
     opacity: 1;
 }
-
 </style>
+
 
 <div class="main-header">
     <div class="main-header-content">
