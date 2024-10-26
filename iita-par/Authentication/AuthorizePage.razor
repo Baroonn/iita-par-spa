@@ -1,6 +1,7 @@
 ﻿@using Blazored.LocalStorage
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
+@using iita_par.Services
 
 @attribute [Authorize]
 
@@ -9,6 +10,7 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager Navigation
 @inject IToastService toastService
+@inject LoadingService loadingService
 
 @code {
     public async Task Logout()
@@ -31,5 +33,11 @@
     public void ShowSuccess(string message)
     {
         toastService.ShowSuccess(message);
+    }
+
+    public void ShowLoading(bool show)
+    {
+        if (show) loadingService.Show();
+        else loadingService.Hide();
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iita-par", "iita-par\iita-par.csproj", "{B9466DB5-8C61-418F-951C-41347D640E0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAR.Shared", "PAR.Shared\PAR.Shared.csproj", "{87988F7F-77D3-412F-B0C1-08227F78E819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAR.Shared", "PAR.Shared\PAR.Shared.csproj", "{87988F7F-77D3-412F-B0C1-08227F78E819}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

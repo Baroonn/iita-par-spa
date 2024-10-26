@@ -108,6 +108,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        ShowLoading(true);
         objective = new()
             {
                 Status = (int) WorkplanStatus.Draft
@@ -118,6 +119,7 @@
         {
             objective.Status ??= (int)WorkplanStatus.Draft;
         }
+        ShowLoading(false);
     }
 
     private void NavigateToEditWorkplan()
@@ -137,6 +139,8 @@
 
     private async Task DeleteObjective()
     {
+        showConfirmation = false;
+        ShowLoading(true);
         var response = await _httpClient.DeleteAsync($"workplans/objectives/{objective.Id}");
         if (response.IsSuccessStatusCode)
         {
@@ -152,11 +156,13 @@
         {
             ShowError("Unable to delete objective.");
         }
-        showConfirmation = false;
+        ShowLoading(false);
     }
 
     private async Task DeleteKpi()
     {
+        showKpiConfirmation = false;
+        ShowLoading(true);
         var response = await _httpClient.DeleteAsync($"workplans/objectives/{objective.Id}/kpis/{selectedKpiId}");
         if (response.IsSuccessStatusCode)
         {
@@ -172,7 +178,8 @@
         {
             ShowError("Unable to delete kpi.");
         }
-        showKpiConfirmation = false;
+        
+        ShowLoading(false);
     }
 
     private async Task OpenKpiDeleteDialog(long kpiId)

@@ -54,42 +54,46 @@
         <div class="year-selector">
             <label for="year">Pick a year:</label>
             <select @bind=selectedYear id="year">
-                <option value="2024">2024</option>
+                <option value="2024" selected>2024</option>
                 <!-- Add other years as needed -->
             </select>
         </div>
-        <div class="approval-status">
-            <p>💡 Your Workplan is yet to be submitted for approval.</p>
-            <textarea class="text-area" placeholder="Leave a comment:"></textarea>
-            <br>
-            <button class="submit-button">Submit</button>
-        </div>
-        <div class="action-logs">
-            <h2>💡 Workplan Action Logs</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Action</th>
-                        <th>Details</th>
-                        <th>Comment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>29/11/2023 11:28</td>
-                        <td>SUBMITTED</td>
-                        <td>Workplan Submitted by ADEMOLA Patrick</td>
-                        <td>Initial Submission</td>
-                    </tr>
-                    <tr>
-                        <td>18/12/2023 14:47</td>
-                        <td>APPROVED</td>
-                        <td>Workplan Approved by DAVID Smith</td>
-                        <td>Final Approval</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        @if (!logs.Any())
+        {
+            <div class="approval-status">
+                <p>💡 Your Workplan is yet to be submitted for approval.</p>
+                <textarea class="text-area" placeholder="Leave a comment:" @bind=comment></textarea>
+                <br>
+                <button class="submit-button" @onclick="Submit">Submit</button>
+            </div>
+        }
+        else
+        {
+            <div class="action-logs">
+                <h2>💡 Workplan Action Logs</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Action</th>
+                            <th>Details</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in logs)
+                        {
+                            <tr>
+                                <td>@item.CreatedDate</td>
+                                <td>@item.Action</td>
+                                <td>Workplan @item.Action by Ademola Patrick</td>
+                                <td>@item.Comment</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
     </div>
 </div>

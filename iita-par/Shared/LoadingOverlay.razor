@@ -1,0 +1,36 @@
+﻿@using iita_par.Services
+@inject LoadingService LoadingService
+
+<div class="loading-overlay" style="@overlayStyle">
+    <div class="spinner"></div>
+</div>
+
+@code {
+    private bool isLoading = false;
+
+    private string overlayStyle => isLoading ? "display: block;" : "display: none;";
+
+    protected override void OnInitialized()
+    {
+        LoadingService.OnShow += ShowOverlay;
+        LoadingService.OnHide += HideOverlay;
+    }
+
+    private void ShowOverlay()
+    {
+        isLoading = true;
+        StateHasChanged(); // Re-render the component
+    }
+
+    private void HideOverlay()
+    {
+        isLoading = false;
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        LoadingService.OnShow -= ShowOverlay;
+        LoadingService.OnHide -= HideOverlay;
+    }
+}

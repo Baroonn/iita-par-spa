@@ -51,6 +51,7 @@
 
     private async Task Submit()
     {
+        ShowLoading(true);
         try
         {
             Objective.Year = selectedYear;
@@ -74,5 +75,6 @@
         {
             ShowError(ex.Message);
         }
+        ShowLoading(false);
     }
 }

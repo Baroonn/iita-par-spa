@@ -55,6 +55,7 @@
 
     public async Task UpdateObjective()
     {
+        ShowLoading(true);
         var response = await _httpClient.PutAsJsonAsync<ObjectiveUpdateDTO>($"workplans/objectives/{Id}", ObjectiveUpdate);
         if (response.IsSuccessStatusCode)
         {
@@ -70,5 +71,6 @@
         {
             ShowError("Unable to update objective. Please confirm that all required data is provided.");
         }
+        ShowLoading(false);
     }
 }
