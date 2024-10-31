@@ -159,6 +159,6 @@ body {
 }
 
 .add-achievement-button:hover {
-    background-color: #0056b3;
+    background-color: yellowgreen;
     transform: translateY(-3px);
 }
