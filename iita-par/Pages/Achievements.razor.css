@@ -1,62 +1,72 @@
-﻿body {
+﻿/* General Styling */
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
-    background-color: #f7f9fc;
+    background-color: #f4f6f9;
     line-height: 1.6;
+    margin: 0;
+    padding: 0 20px;
 }
 
+/* Header */
 .achievements-header {
     text-align: left;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 25px;
 }
 
 .achievements-header h1 {
     margin: 0;
-    font-size: 26px;
-    color: #007bff;
+    font-size: 28px;
+    color: #0056b3;
+    font-weight: 600;
 }
 
 .achievements-header p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #555;
+    margin: 8px 0;
+    font-size: 15px;
+    color: #666;
 }
 
+/* Content */
 .achievements-content {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .achievements-content h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
+    font-size: 24px;
+    margin-bottom: 20px;
     color: #333;
+    font-weight: 500;
 }
 
+/* Objective Card */
 .objective {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .objective:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .objective h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 20px;
+    margin-bottom: 10px;
     color: #333;
+    font-weight: 500;
 }
 
+/* Toggle Details */
 .toggle-details {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     cursor: pointer;
     color: #007bff;
     background: none;
@@ -70,48 +80,51 @@
     color: #0056b3;
 }
 
+/* Details Section */
 .workplan-details {
-    margin: 20px auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 15px 0;
+    background-color: #fafafa;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s ease;
 }
 
 .kpi-section, .achievement-section {
     padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    background-color: #f1f1f1;
-    margin-bottom: 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    margin-bottom: 15px;
     transition: background-color 0.3s ease;
 }
 
 .kpi-section p, .achievement-section p {
-    margin: 10px 0;
+    margin: 8px 0;
     font-size: 16px;
-    color: #444;
+    color: #555;
 }
 
+/* Achievement Section Layout */
 .achievement-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Buttons */
 .buttons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 .delete-btn, .edit-btn {
-    padding: 10px 20px;
+    padding: 10px 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     transition: background-color 0.3s ease;
 }
 
@@ -125,16 +138,17 @@
 }
 
 .edit-btn {
-    background-color: #f0f0f0;
-    color: black;
+    background-color: #e7e7e7;
+    color: #333;
 }
 
 .edit-btn:hover {
-    background-color: #e0e0e0;
+    background-color: #dcdcdc;
 }
 
+/* Add Achievement Button */
 .add-achievement-button {
-    padding: 10px 20px;
+    padding: 10px 18px;
     font-size: 16px;
     color: #fff;
     background-color: #007bff;
@@ -145,6 +159,6 @@
 }
 
 .add-achievement-button:hover {
-    background-color: #0056b3;
+    background-color: yellowgreen;
     transform: translateY(-3px);
 }
