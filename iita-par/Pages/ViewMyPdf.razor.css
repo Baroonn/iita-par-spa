@@ -62,7 +62,7 @@
 }
 
 .pdf-buttons button:hover {
-    background-color: #0a58ca;
+    background-color: yellowgreen;
     transform: translateY(-3px);
 }
 

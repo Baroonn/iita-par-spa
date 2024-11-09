@@ -1,105 +1,106 @@
-﻿/* Main container with shadow and smooth hover effect */
+﻿/* Main container with shadow, rounded corners, and smooth scaling effect */
 .container {
-    width: 900px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
+    width: 100%;
+    max-width: 900px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
     overflow: hidden;
-    padding: 24px;
+    padding: 32px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .container:hover {
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
-    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.04);
 }
 
-/* Header section with subtle gradient and shadow */
+/* Header section with a stronger gradient and shadow */
 .header {
     text-align: left;
-    padding: 24px;
-    border-bottom: 1px solid #e0e0e0;
-    background: linear-gradient(135deg, #eef2f6, #fafafa);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+    border-bottom: 1px solid #d3d3d3;
+    background: linear-gradient(135deg, #e8f0f7, #ffffff);
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header:hover {
-    background: linear-gradient(135deg, #e0e6eb, #f3f4f5);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #d9e5ee, #f1f5f8);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
 }
 
 .header h1 {
     margin: 0;
-    font-size: 28px;
-    color: #34495e;
+    font-size: 30px;
+    color: #2c3e50;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
 }
 
 .header p {
-    margin: 6px 0;
-    color: #95a5a6;
+    margin: 8px 0;
+    color: #7f8c8d;
     font-size: 16px;
 }
 
-/* Contact information styling */
+/* Contact information with additional styling */
 .contact-info {
     font-size: 16px;
-    color: #95a5a6;
-    margin-top: 12px;
-    border-top: 1px solid #e0e0e0;
-    padding-top: 12px;
+    color: #7f8c8d;
+    margin-top: 14px;
+    border-top: 1px solid #d3d3d3;
+    padding-top: 14px;
 }
 
-/* Action section with smooth background transition */
+/* Actions section with smooth background transition */
 .actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 24px;
-    padding: 18px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    border: 1px solid #e3e6e8;
+    margin-top: 28px;
+    padding: 20px;
+    background-color: #f4f6f8;
+    border-radius: 14px;
+    border: 1px solid #d9dbdf;
     transition: background-color 0.3s ease;
 }
 
 .actions:hover {
-    background-color: #eef0f2;
+    background-color: #eaecee;
 }
 
-/* Buttons and select fields with improved design */
+/* Buttons and select fields with improved styling */
 .add-workplan .button, .year-selector select {
-    padding: 12px 16px;
+    padding: 14px 18px;
     font-size: 15px;
-    margin: 5px;
+    margin: 6px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     background-color: #ecf0f1;
     border: 1px solid #bdc3c7;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .add-workplan .button:hover, .year-selector select:hover {
-    background-color: #d5d8dc;
+    background-color: #d4d8da;
     color: #2c3e50;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Workplan section arranged with flexbox */
+/* Workplan section organized with flexbox */
 .workplan-section {
-    margin-top: 24px;
+    margin-top: 28px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px;
     flex-direction: row;
-    gap: 16px;
+    gap: 18px;
+    margin-bottom: 56px;
 }
 
-/* Objectives section with modern typography */
 .objectives {
     width: 60%;
     overflow-y: auto;
@@ -108,143 +109,92 @@
 .objectives h2 {
     font-size: 24px;
     margin-bottom: 18px;
-    color: #2c3e50;
+    color: #34495e;
     font-weight: 600;
 }
 
-/* Individual objective cards with interactive effects */
+/* Individual objective cards with updated hover and shadow effect */
 .objective {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #d9dbdf;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    background-color: #fafafa;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .objective:hover {
-    background-color: #f1f3f4;
-    transform: translateY(-4px);
+    background-color: #f0f2f3;
+    transform: translateY(-5px);
 }
 
 .objective p {
     margin: 0;
-    color: #34495e;
-}
-
-/* Buttons within objectives */
-.objective .button {
-    padding: 8px 16px;
-    font-size: 14px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #ecf0f1;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.objective .button:hover {
-    background-color: #d5d8dc;
     color: #2c3e50;
 }
 
-/* Approval section with prominent styling */
+/* Approval section with updated styling */
 .approval-section {
     width: 35%;
 }
 
-.approval-status, .action-logs {
-    margin-bottom: 24px;
-}
-
-/* Approval status with distinct hover effect */
 .approval-status {
-    border: 1px solid #e0e0e0;
-    margin-top: 24px;
-    padding: 18px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    background-color: #fafafa;
+    border: 1px solid #d9dbdf;
+    margin-top: 26px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f9fafa;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .approval-status:hover {
-    background-color: #f5f5f5;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    background-color: #f2f4f5;
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
 }
 
-.text-area {
-    width: 100%;
-}
-
-.approval-status p {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #2c3e50;
-}
-
-/* Improved styling for text areas */
 .approval-status textarea {
     width: 100%;
     height: 90px;
-    padding: 14px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid #d9dbdf;
+    border-radius: 12px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .approval-status textarea:focus {
     border-color: #0056b3;
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+    box-shadow: 0 0 6px rgba(0, 86, 179, 0.5);
     outline: none;
 }
 
 .submit-button {
-    padding: 12px 20px;
+    padding: 14px 22px;
     font-size: 15px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     background-color: #0056b3;
     color: #ffffff;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .submit-button:hover {
-    background-color: #00408a;
-    transform: translateY(-4px);
-    
+    background-color:yellowgreen;
+
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Action logs with clear and accessible design */
-.action-logs h2 {
-    font-size: 20px;
-    margin-bottom: 12px;
-    color: #2c3e50;
-}
-
-.action-logs table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.action-logs th, .action-logs td {
-    border: 1px solid #e0e0e0;
-    padding: 12px;
-    text-align: left;
-}
-
-.action-logs th {
-    background-color: #f1f1f1;
-    color: #333;
-    font-weight: 600;
-}
-
-.action-logs td {
-    color: #555;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .workplan-section {
+        flex-direction: column;
+    }
+    .objectives, .approval-section {
+        width: 100%;
+    }
 }
