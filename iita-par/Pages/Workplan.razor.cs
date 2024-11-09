@@ -1,4 +1,5 @@
-﻿using PAR.Shared.DTOs;
+﻿using Microsoft.AspNetCore.Components;
+using PAR.Shared.DTOs;
 using PAR.Shared.Enums;
 using System.Net.Http.Json;
 using System.Security.AccessControl;
@@ -7,6 +8,9 @@ namespace iita_par.Pages
 {
     public partial class Workplan
     {
+        [SupplyParameterFromQuery]
+        public bool? Refresh { get; set; } = true;
+
         private ObjectiveReadDTO[]? objectives;
         private WorkplanStatusLogReadDTO[]? logs = [];
         private string selectedYear = "2024";
@@ -14,20 +18,31 @@ namespace iita_par.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            ShowLoading(true);
-            try
+            Refresh ??= true;
+            if (Refresh == true)
             {
-                objectives = await _httpClient.GetFromJsonAsync<ObjectiveReadDTO[]>($"workplans/objectives?year={selectedYear}");
-                logs = await _httpClient.GetFromJsonAsync<WorkplanStatusLogReadDTO[]>($"workplans/status/logs?year={selectedYear}");
-
-                //var response = await _httpClient.GetAsync($"workplans/status/logs?year={selectedYear}");
+                ShowLoading(true);
+                try
+                {
+                    objectives = await _httpClient.GetFromJsonAsync<ObjectiveReadDTO[]>($"workplans/objectives?year={selectedYear}");
+                    logs = await _httpClient.GetFromJsonAsync<WorkplanStatusLogReadDTO[]>($"workplans/status/logs?year={selectedYear}");
+                    await SetItemAsync("objectives", objectives);
+                    await SetItemAsync("logs", logs);
+                }
+                catch (Exception ex)
+                {
+                    await Logout();
+                }
+                finally
+                {
+                    ShowLoading(false);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                ShowLoading(false);
-                await Logout();
+                objectives = await GetItemAsync<ObjectiveReadDTO[]>("objectives");
+                logs = await GetItemAsync<WorkplanStatusLogReadDTO[]>("logs");
             }
-            ShowLoading(false);
         }
 
         public void NavigateToDetails(long id)

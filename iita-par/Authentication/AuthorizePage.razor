@@ -40,4 +40,14 @@
         if (show) loadingService.Show();
         else loadingService.Hide();
     }
+
+    public async Task SetItemAsync<T>(string key, T value)
+    {
+        await LocalStorage.SetItemAsync<T>(key, value);
+    }
+
+    public async Task<T> GetItemAsync<T>(string key)
+    {
+        return await LocalStorage.GetItemAsync<T>(key);
+    }
 }
