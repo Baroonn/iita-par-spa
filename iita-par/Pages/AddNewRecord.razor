@@ -21,7 +21,7 @@
         <p><strong>Username:</strong> ADEMOLA Patrick</p>
         <label for="workplan-year"><strong>Workplan Year:</strong></label>
         <select id="workplan-year" @bind="selectedYear">
-            <option value="2024">2024</option>
+            <option value="2024" selected>2024</option>
             <!-- Add other years as needed -->
         </select>
     </div>
@@ -35,7 +35,7 @@
         <textarea @bind=Objective.Objective id="objective" placeholder="Enter your objective here"></textarea>
     </div>
     <div class="buttons">
-        <button class="cancel-button">Cancel</button>
+        <div class="cancel-button" @onclick=@(()=>NavigateTo("workplan?refresh=false"))>Cancel</div>
         <button type="submit" class="update-button">Update</button>
     </div>
 </EditForm>
@@ -45,7 +45,7 @@
     [SupplyParameterFromForm]
     private ObjectiveCreateDTO? Objective { get; set; }
 
-    private int selectedYear { get; set; }
+    private int selectedYear { get; set; } = 2024;
 
     protected override void OnInitialized() => Objective ??= new();
 
@@ -75,6 +75,13 @@
         {
             ShowError(ex.Message);
         }
-        ShowLoading(false);
+        finally
+        {
+            ShowLoading(false);
+        }
+    }
+
+    private async Task GoBack(){
+        NavigateTo("workplan");
     }
 }
