@@ -1,6 +1,11 @@
-﻿@page "/edit-appraisal"
+﻿@page "/edit-appraisal/{id:long}"
 @using PAR.Shared.DTOs
 @using PAR.Shared.Enums
+@using iita_par.Authentication
+
+@inherits AuthorizePage
+
+@inject HttpClient _httpClient;
 
 <div class="header par-card">
     <h1>My Appraisals - Review Appraisal</h1>
@@ -17,16 +22,16 @@
     <div class="card par-card">
         <h3>PART I</h3>
         <h4>Demographics</h4>
-        <p><strong>Unit/Project:</strong> PPS</p>
-        <p><strong>Name:</strong> ADEMOLA Patrick</p>
-        <p><strong>Position Title:</strong> Project Supervisor, PPS</p>
+        <p><strong>Unit/Project:</strong> @appraisal?.Unit</p>
+        <p><strong>Name:</strong>@appraisal?.AppraiseeName</p>
+        <p><strong>Position Title:</strong> @appraisal?.JobTitle</p>
         <p><strong>PID:</strong> Null</p>
-        <p><strong>Country Status:</strong> Nigeria</p>
-        <p><strong>Supervisor:</strong> JOHN Smith D051251</p>
-        <p><strong>Last modified:</strong> KOraegbunam, 30/12/2019</p>
-        <p><strong>Status:</strong> PENDING</p>
-        <p><strong>Final score:</strong> 0.00</p>
-        <p><strong>Rating Summary:</strong> Undefined</p>
+        <p><strong>Country Status:</strong>@appraisal?.Country</p>
+        <p><strong>Supervisor:</strong> @appraisal?.AppraiserName</p>
+        <p><strong>Last modified:</strong></p>
+        <p><strong>Status:</strong> @appraisal?.Status</p>
+        <p><strong>Final score:</strong>@appraisal?.FinalScore</p>
+        <p><strong>Rating Summary:</strong>@appraisal?.RatingSummary</p>
     </div>
     <div class="card par-card">
         <h3>PART II</h3>
@@ -42,7 +47,7 @@
     </div>
 </div>
 <div class="section">
-    <h3>Does appraisee Manage staff?</h3>
+    <p>Does appraisee Manage staff?</p>
 </div>
 <div class="section par-card">
     <div class="card">
@@ -54,11 +59,11 @@
                 }
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.WorkplanAchievement.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.WorkplanAchievement, score)" />
+                    <input type="radio" name="@AppraisalScoreKey.WorkplanAchievement.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.WorkplanAchievement, score)" checked="@(appraisal?.Score[AppraisalScoreKey.WorkplanAchievement] == score)" />
                 }
             </div>
         </div>
-        
+
         <p>Directly related to not only the staff member's job description, but also to the overall unit/project/section/culture/strategic priorities for the year, workplan achievement measures the staff member's results in meeting the objectives/tasks set and agreed between the supervisor and the staff for the year under review. This will be assessed based on agreed targets and performance standards. The recipient must consider and include the outputs produced during the year. Assessment will take into consideration both the output/volume, quality, quantity and timeliness of delivery. It is recommended that at least a minimum of 5 performance outcomes/products with clear performance descriptions/targets against which the team rate those aspects.</p>
         <p>At the end of the agreed time under review, staff will prepare a detailed workplan achievement based on the agreed targets and performance standards.</p>
     </div>
@@ -68,11 +73,11 @@
             <div>
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.Initiative.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Initiative, score)" />
+                    <input type="radio" name="@AppraisalScoreKey.Initiative.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Initiative, score)" checked="@(appraisal?.Score[AppraisalScoreKey.Initiative] == score)" />
                 }
             </div>
         </div>
-        
+
         <p>The staff member is innovative and creative ability, is imaginative, is willing and able to lead and/or contribute to process improvement and modification, resolve problems and develop existing processes to solutions, working with minimal direction.</p>
     </div>
     <div class="card">
@@ -81,11 +86,11 @@
             <div>
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.InterRelations.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.InterRelations, score)" />
+                    <input type="radio" name="@AppraisalScoreKey.InterRelations.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.InterRelations, score)" checked="@(appraisal?.Score[AppraisalScoreKey.InterRelations] == score)" />
                 }
             </div>
         </div>
-        
+
         <p>This measures the ability to establish and maintain positive relations with colleagues and stakeholders (internal and external) in a way that facilitates work and enhances productivity and to quickly address customer needs and resolve their complaints in a manner that has a positive impact on performance and morale. The staff is assessed on whether he/she is a team player, demonstrates a positive attitude to work and people, exhibits empathy and listening ability and works collaboratively with others to achieve good relationship management, adaptability, and willingness to innovate, and is receptive to feedback.</p>
     </div>
     <div class="card">
@@ -94,11 +99,11 @@
             <div>
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.Communication.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Communication, score)" />
+                    <input type="radio" name="@AppraisalScoreKey.Communication.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Communication, score)" checked="@(appraisal?.Score[AppraisalScoreKey.Communication] == score)"/>
                 }
             </div>
         </div>
-        
+
         <p>This factor evaluates the staff member's ability to effectively use and exchange information, and make presentations in a clear and concise manner, without distortions or persistent need for clarification. The communication is timely and helpful, supporting effective delivery and maintenance of good relationships with appraisers, colleagues, and other stakeholders, showing courtesy as may be necessary.</p>
     </div>
     <div class="card">
@@ -107,11 +112,11 @@
             <div>
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.Compliance.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Compliance, score)" />
+                    <input type="radio" name="@AppraisalScoreKey.Compliance.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Compliance, score)" checked="@(appraisal?.Score[AppraisalScoreKey.Compliance] == score)" />
                 }
             </div>
         </div>
-        
+
         <p>This measures the staff member's respect for policy, processes and standard operating procedures (SOPs) without loss of efficiency and productivity. Policy compliance includes respect for workplace safety, code of conduct, intellectual property rights, open access and M&E.</p>
     </div>
 </div>
@@ -151,38 +156,69 @@
 
 <div class="part par-card">
     <h3>PART III - Conclusion of PAR</h3>
-    <p><strong>General comments on Staff's conduct and performance:</strong></p>
-    <p><strong>What are the strengths of the staff:</strong></p>
-    <p><strong>What areas need to be improved:</strong></p>
-    <p><strong>Completed training in 2019 (if any):</strong></p>
-    <p><strong>Identified training needs for 2020:</strong></p>
-    <p><strong>Did appraise serve on any committees/task teams:</strong></p>
-</div>
-
-<div class="part par-card">
-    <h3>PART IV - To Be Completed By Staff</h3>
-    <label for="comments">Comments by staff related to this appraisal:</label>
-    <textarea id="comments" rows="4" cols="50"></textarea>
-    <p>Do you want to appeal this appraisal?</p>
-    <label for="appeal-yes">Yes</label>
-    <input type="radio" id="appeal-yes" name="appeal" value="yes">
-    <label for="appeal-no">No</label>
-    <input type="radio" id="appeal-no" name="appeal" value="no" checked>
-    <br>
-    <button>Save Comment</button>
+    <p><strong>General comments on Staff's conduct and performance: </strong>@appraisal?.Comments</p>
+    <p><strong>What are the strengths of the staff:</strong>@appraisal?.Strengths</p>
+    <p><strong>What areas need to be improved:</strong>@appraisal?.Weaknesses</p>
+    <p><strong>Completed training in 2019 (if any):</strong>@appraisal?.CompletedTraining</p>
+    <p><strong>Identified training needs for 2020:</strong>@appraisal?.TrainingNeeds</p>
+    <p><strong>Did appraise serve on any committees/task teams:</strong>@(appraisal?.AppraiseeServed ?? false ? "YES": "NO")</p>
 </div>
 
 <div class="part par-card">
     <h3>PART V - 2024 Workplan Status</h3>
-    <p>Workplan Uploaded: <strong>NO</strong></p>
-    <p>Workplan Submitted: <strong>NO</strong></p>
-    <p>Workplan Approved: <strong>NO</strong></p>
+    <p>Workplan Uploaded: <strong>@(appraisal?.WorkplanUploaded ?? false ? "YES":"NO")</strong></p>
+    <p>Workplan Submitted: <strong>@(appraisal?.WorkplanSubmitted ?? false ? "YES" : "NO")</strong></p>
+    <p>Workplan Approved: <strong>@(appraisal?.WorkplanApproved ?? false ? "YES" : "NO")</strong></p>
 </div>
+
+<div class="part par-card">
+    <button @onclick=UpdateAppraisal>Save</button>
+</div>
+
+
 @code {
     [Parameter]
-    public AppraisalReadDTO? Appraisal { get; set; }
+    public long Id { get; set; }
+
+    AppraisalReadDTO appraisal;
+    AppraisalEditDTO appraisalEdit = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        appraisal = await _httpClient.GetFromJsonAsync<AppraisalReadDTO>($"appraisals/{Id}");
+    }
     private void UpdateScore(AppraisalScoreKey key, float score)
     {
-        Appraisal.Score[key] = score;
+        appraisal.Score[key] = score;
+    }
+
+    private async Task UpdateAppraisal()
+    {
+        appraisalEdit.Score = appraisal.Score;
+        appraisalEdit.Comments = appraisal.Comments;
+        appraisalEdit.Strengths = appraisal.Strengths;
+        appraisalEdit.Weaknesses = appraisal.Weaknesses;
+        appraisalEdit.CompletedTraining = appraisal.CompletedTraining;
+        appraisalEdit.TrainingNeeds = appraisal.TrainingNeeds;
+        appraisalEdit.CountryId = 1;
+        // appraisalEdit.Appeal = appraisal.Appeal;
+        // appraisalEdit.StaffComments = appraisal.StaffComments;
+        // appraisalEdit.CountryId = appraisal.CountryId;
+
+        var response = await _httpClient.PutAsJsonAsync<AppraisalEditDTO>($"appraisals/{Id}", appraisalEdit);
+        if (response.IsSuccessStatusCode)
+        {
+            ShowSuccess("Appraisal updated successfully");
+            appraisal = await _httpClient.GetFromJsonAsync<AppraisalReadDTO>($"appraisals/{Id}");
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+        {
+            ShowError("Unauthorized. Please login again.");
+            await Logout();
+        }
+        else
+        {
+            ShowError("Unable to update appraisal. Please confirm that all required data is provided.");
+        }
     }
 }
