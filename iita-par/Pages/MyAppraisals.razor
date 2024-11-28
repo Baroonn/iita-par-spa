@@ -1,4 +1,10 @@
 ﻿@page "/my-appraisals"
+@using PAR.Shared.DTOs
+@using iita_par.Authentication
+
+@inherits AuthorizePage
+
+@inject HttpClient _httpClient;
 
 <div class="appraisal-header par-card">
     <h1>My Appraisals</h1>
@@ -26,22 +32,43 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>David, Smith</td>
-                <td>
-                    R
-                    <a href="#">WP</a>
-                    <a href="#">PDF</a>
-                    ADEMOLA, Patrick [E3ADEPAT]
-                </td>
-                <td>Nigeria</td>
-                <td>KOraegbunam, 15/01/2024</td>
-                <td>PENDING</td>
-            </tr>
+            @foreach(var appraisal in appraisals){
+                @* <tr>
+                    <td>David, Smith</td>
+                    <td>
+                        R
+                        <a href="#">WP</a>
+                        <a href="#">PDF</a>
+                        ADEMOLA, Patrick [E3ADEPAT]
+                    </td>
+                    <td>Nigeria</td>
+                    <td>KOraegbunam, 15/01/2024</td>
+                    <td>PENDING</td>
+                </tr> *@
+
+                <tr>
+                    <td>@appraisal.AppraiserName</td>
+                    <td>
+                        R
+                        <a href="#">WP</a>
+                        <a href="#">PDF</a>
+                        @appraisal.AppraiseeName
+                    </td>
+                    <td>@appraisal.Country</td>
+                    <td>@appraisal.LastUpdatedBy , @appraisal.LastUpdated</td>
+                    <td>PENDING</td>
+                </tr>
+            }
+            
             <!-- Add more rows as needed -->
         </tbody>
     </table>
 </div>
 @code {
+    AppraisalReadDTO[] appraisals = [];
 
+    protected override async Task OnInitializedAsync()
+    {
+        appraisals = await _httpClient.GetFromJsonAsync<AppraisalReadDTO[]>($"appraisals?year=2024");
+    }
 }
