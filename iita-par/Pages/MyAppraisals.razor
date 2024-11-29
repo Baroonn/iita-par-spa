@@ -46,7 +46,7 @@
                     <td>PENDING</td>
                 </tr> *@
 
-                <tr>
+                <tr @onclick="() => NavigateToAppraisalDetail(appraisal.Id, true)">
                     <td>@appraisal.AppraiserName</td>
                     <td>
                         R
@@ -59,7 +59,7 @@
                     <td>PENDING</td>
                 </tr>
             }
-            
+
             <!-- Add more rows as needed -->
         </tbody>
     </table>
@@ -70,5 +70,14 @@
     protected override async Task OnInitializedAsync()
     {
         appraisals = await _httpClient.GetFromJsonAsync<AppraisalReadDTO[]>($"appraisals?year=2024");
+    }
+
+    private void NavigateToAppraisalDetail(long id, bool isSupervisor)
+    {
+        if(isSupervisor){
+            NavigateTo($"edit-appraisal/{id}");
+        }else{
+            NavigateTo($"review-appraisal/{id}");
+        }
     }
 }

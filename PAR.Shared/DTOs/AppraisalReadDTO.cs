@@ -31,5 +31,8 @@ namespace PAR.Shared.DTOs
         public bool AppraiseeServed { get; set; }
         public bool Appeal { get; set; }
         public string StaffComments { get; set; } = string.Empty;
+        public bool WorkplanUploaded { get; set; }
+        public bool WorkplanSubmitted { get; set; }
+        public bool WorkplanApproved { get; set; }
     }
 }
