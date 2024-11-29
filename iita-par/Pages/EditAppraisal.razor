@@ -59,7 +59,7 @@
                 }
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.WorkplanAchievement.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.WorkplanAchievement, score)" checked="@(appraisal?.Score[AppraisalScoreKey.WorkplanAchievement] == score)" />
+                    <input type="radio" name="@AppraisalScoreKey.WorkplanAchievement.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.WorkplanAchievement, score)" checked="@(appraisal.Score.TryGetValue(AppraisalScoreKey.WorkplanAchievement, out float nScore) && nScore == score)" />
                 }
             </div>
         </div>
@@ -73,7 +73,7 @@
             <div>
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.Initiative.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Initiative, score)" checked="@(appraisal?.Score[AppraisalScoreKey.Initiative] == score)" />
+                    <input type="radio" name="@AppraisalScoreKey.Initiative.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Initiative, score)" checked="@(appraisal.Score.TryGetValue(AppraisalScoreKey.Initiative, out float nScore) && nScore == score)" />
                 }
             </div>
         </div>
@@ -86,7 +86,7 @@
             <div>
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.InterRelations.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.InterRelations, score)" checked="@(appraisal?.Score[AppraisalScoreKey.InterRelations] == score)" />
+                    <input type="radio" name="@AppraisalScoreKey.InterRelations.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.InterRelations, score)" checked="@(appraisal.Score.TryGetValue(AppraisalScoreKey.InterRelations, out float nScore) && nScore == score)" />
                 }
             </div>
         </div>
@@ -99,7 +99,7 @@
             <div>
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.Communication.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Communication, score)" checked="@(appraisal?.Score[AppraisalScoreKey.Communication] == score)"/>
+                    <input type="radio" name="@AppraisalScoreKey.Communication.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Communication, score)" checked="@(appraisal.Score.TryGetValue(AppraisalScoreKey.Communication, out float nScore) && nScore == score)" />
                 }
             </div>
         </div>
@@ -112,7 +112,7 @@
             <div>
                 @foreach (var score in scores)
                 {
-                    <input type="radio" name="@AppraisalScoreKey.Compliance.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Compliance, score)" checked="@(appraisal?.Score[AppraisalScoreKey.Compliance] == score)" />
+                    <input type="radio" name="@AppraisalScoreKey.Compliance.ToString()" value="@score" @onchange="() => UpdateScore(AppraisalScoreKey.Compliance, score)" checked="@(appraisal.Score.TryGetValue(AppraisalScoreKey.Compliance, out float nScore) && nScore == score)" />
                 }
             </div>
         </div>
@@ -156,11 +156,16 @@
 
 <div class="part par-card">
     <h3>PART III - Conclusion of PAR</h3>
-    <p><strong>General comments on Staff's conduct and performance: </strong>@appraisal?.Comments</p>
-    <p><strong>What are the strengths of the staff:</strong>@appraisal?.Strengths</p>
-    <p><strong>What areas need to be improved:</strong>@appraisal?.Weaknesses</p>
-    <p><strong>Completed training in 2019 (if any):</strong>@appraisal?.CompletedTraining</p>
-    <p><strong>Identified training needs for 2020:</strong>@appraisal?.TrainingNeeds</p>
+    <p><strong>General comments on Staff's conduct and performance: </strong></p>
+    <textarea rows="4" cols="50" @bind="appraisal.Comments"></textarea>
+    <p><strong>What are the strengths of the staff:</strong></p>
+    <textarea rows="4" cols="50" @bind="appraisal.Strengths"></textarea>
+    <p><strong>What areas need to be improved:</strong></p>
+    <textarea rows="4" cols="50" @bind="appraisal.Weaknesses"></textarea>
+    <p><strong>Completed training in 2019 (if any):</strong></p>
+    <textarea rows="4" cols="50" @bind="appraisal.CompletedTraining"></textarea>
+    <p><strong>Identified training needs for 2020:</strong></p>
+    <textarea rows="4" cols="50" @bind="appraisal.TrainingNeeds"></textarea>
     <p><strong>Did appraise serve on any committees/task teams:</strong>@(appraisal?.AppraiseeServed ?? false ? "YES": "NO")</p>
 </div>
 
@@ -180,7 +185,7 @@
     [Parameter]
     public long Id { get; set; }
 
-    AppraisalReadDTO appraisal;
+    AppraisalReadDTO appraisal = new();
     AppraisalEditDTO appraisalEdit = new();
 
     protected override async Task OnInitializedAsync()

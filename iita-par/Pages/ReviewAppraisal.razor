@@ -1,4 +1,10 @@
 ﻿@page "/review-appraisal/{id:long}"
+@using PAR.Shared.DTOs
+@using iita_par.Authentication
+
+@inherits AuthorizePage
+
+@inject HttpClient _httpClient;
 
 <div class="header par-card">
     <h1>My Appraisals - Review Appraisal</h1>
@@ -112,14 +118,14 @@
 <div class="part par-card">
     <h3>PART IV - To Be Completed By Staff</h3>
     <label for="comments">Comments by staff related to this appraisal:</label>
-    <textarea id="comments" rows="4" cols="50"></textarea>
+    <textarea id="comments" rows="4" cols="50" @bind=appraisal.StaffComments></textarea>
     <p>Do you want to appeal this appraisal?</p>
-    <label for="appeal-yes">Yes</label>
-    <input type="radio" id="appeal-yes" name="appeal" value="yes">
-    <label for="appeal-no">No</label>
-    <input type="radio" id="appeal-no" name="appeal" value="no" checked>
+    <label>Yes</label>
+    <input type="radio" name="appeal" @onchange="() => UpdateAppeal(true)" checked="@(appraisal.Appeal == true)">
+    <label>No</label>
+    <input type="radio" name="appeal" @onchange="() => UpdateAppeal(false)" checked="@(appraisal.Appeal == false)">
     <br>
-    <button>Save Comment</button>
+    <button @onclick=UpdateAppraisal>Save Comment</button>
 </div>
 
 <div class="part par-card">
@@ -128,6 +134,53 @@
     <p>Workplan Submitted: <strong>NO</strong></p>
     <p>Workplan Approved: <strong>NO</strong></p>
 </div>
-@code {
 
+@code {
+    [Parameter]
+    public long Id { get; set; }
+
+    AppraisalReadDTO appraisal = new();
+    AppraisalEditDTO appraisalEdit = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        appraisal = await _httpClient.GetFromJsonAsync<AppraisalReadDTO>($"appraisals/{Id}");
+    }
+
+    private void UpdateAppeal(bool appeal)
+    {
+        appraisal.Appeal = appeal;
+    }
+
+    private async Task UpdateAppraisal()
+    {
+        appraisalEdit.Score = appraisal.Score;
+        appraisalEdit.Comments = appraisal.Comments;
+        appraisalEdit.Strengths = appraisal.Strengths;
+        appraisalEdit.Weaknesses = appraisal.Weaknesses;
+        appraisalEdit.CompletedTraining = appraisal.CompletedTraining;
+        appraisalEdit.TrainingNeeds = appraisal.TrainingNeeds;
+        appraisalEdit.CountryId = 1;
+        appraisalEdit.Appeal = appraisal.Appeal;
+        appraisalEdit.StaffComments = appraisal.StaffComments;
+        // appraisalEdit.Appeal = appraisal.Appeal;
+        // appraisalEdit.StaffComments = appraisal.StaffComments;
+        // appraisalEdit.CountryId = appraisal.CountryId;
+
+        var response = await _httpClient.PutAsJsonAsync<AppraisalEditDTO>($"appraisals/{Id}", appraisalEdit);
+        if (response.IsSuccessStatusCode)
+        {
+            ShowSuccess("Appraisal updated successfully");
+            appraisal = await _httpClient.GetFromJsonAsync<AppraisalReadDTO>($"appraisals/{Id}");
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+        {
+            ShowError("Unauthorized. Please login again.");
+            await Logout();
+        }
+        else
+        {
+            ShowError("Unable to update appraisal. Please confirm that all required data is provided.");
+        }
+    }
 }
